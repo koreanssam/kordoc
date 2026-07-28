@@ -59,6 +59,10 @@ function shiftParaVert(p: Element, delta: number): void {
 export interface ReflowGeom {
   BODY_W: number
   BODY_H: number
+  /** 다단 수. 2 이상이면 페이지 넘김 리셋을 단 순환으로 해석한다. */
+  COL_COUNT?: number
+  /** 첫 페이지의 2번째 이후 단이 시작할 세로 위치(전폭 머리표 아래). */
+  FIRST_PAGE_COL_TOP?: number
 }
 
 /** 줄 pitch(다음 줄 vertpos 증분, HWPUNIT) — lineSpacing type별 */
@@ -239,9 +243,12 @@ function reflowBlockFlow(
   mode: WrapMode,
   counter: { n: number },
   bodyH: number,
+  colCount = 1,
+  firstPageColTop = 0,
 ): void {
   let cursorV = 0
   let prevSpaceAfter = 0
+  let flowColumn = 0
   for (const p of elements(container)) {
     if (ln(p) !== "p") continue
     // 문단 안 표 셀을 먼저 셀 로컬 좌표로 reflow (본문 세로 흐름과 무관) —
@@ -273,8 +280,10 @@ function reflowBlockFlow(
     const paraH = res.paraBottom - startV
     // 페이지 넘김: 문단이 현재 페이지를 넘치고, 문단 자체는 한 페이지에 들어가면 다음 페이지로.
     if (bodyH > 0 && startV > 0 && res.paraBottom > bodyH && paraH <= bodyH) {
-      shiftParaVert(p, -startV) // 새 페이지 상단(로컬 0)으로 이동 → 프리패스가 vertpos 역행 감지
-      cursorV = paraH
+      flowColumn++
+      const targetTop = flowColumn < colCount ? firstPageColTop : 0
+      shiftParaVert(p, targetTop - startV)
+      cursorV = targetTop + paraH
     } else {
       cursorV = res.paraBottom
     }
@@ -296,6 +305,16 @@ export function reflowSection(
 ): number {
   const doc = root.ownerDocument as unknown as Document
   const counter = { n: 0 }
-  reflowBlockFlow(root, doc, styles, geom.BODY_W, mode, counter, geom.BODY_H)
+  reflowBlockFlow(
+    root,
+    doc,
+    styles,
+    geom.BODY_W,
+    mode,
+    counter,
+    geom.BODY_H,
+    Math.max(1, geom.COL_COUNT ?? 1),
+    Math.max(0, geom.FIRST_PAGE_COL_TOP ?? 0),
+  )
   return counter.n
 }

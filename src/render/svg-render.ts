@@ -811,10 +811,43 @@ function renderSectionToPages(
   reflowMode: WrapMode,
 ): { pages: string[][]; pageH: number } {
   const { PW, PH, ML, MT, BODY_W, BODY_H } = geom
+  const colPr = findFirst(root, "colPr")
+  const colCount = Math.max(1, num(colPr, "colCount", 1))
+  const colGap = Math.max(0, num(colPr, "sameGap", 0))
+  const multiCol = colCount > 1
+  const colW = multiCol
+    ? Math.max(1000, Math.floor((BODY_W - colGap * (colCount - 1)) / colCount))
+    : BODY_W
+  let firstPageColTop = 0
+  if (multiCol) {
+    for (const p of elements(root)) {
+      if (ln(p) !== "p") continue
+      const table = findFirst(p, "tbl")
+      const sz = table ? findChildByLocalName(table, "sz") : null
+      if (!table || num(sz, "width") < colW * 1.5) continue
+      const om = findChildByLocalName(table, "outMargin")
+      const pos = findChildByLocalName(table, "pos")
+      firstPageColTop = Math.max(
+        firstPageColTop,
+        Math.max(0, num(pos, "vertOffset"))
+          + num(om, "top")
+          + num(sz, "height")
+          + num(om, "bottom"),
+      )
+      break
+    }
+  }
   // Tier-2 reflow — 캐시 없는 문단에 linesegarray 합성 주입. 혼합 캐시 문서(한컴
   // 저장본을 프로그램 편집해 일부 문단만 캐시 없음)도 reflow 옵션이면 진입한다 —
   // 전량 캐시 문서는 전 문단 skip(Tier-1 무회귀)이라 no-op.
-  if (doReflow) reflowSection(root, ctxBase.styles, { BODY_W, BODY_H }, reflowMode)
+  if (doReflow) {
+    reflowSection(root, ctxBase.styles, {
+      BODY_W: colW,
+      BODY_H,
+      COL_COUNT: colCount,
+      FIRST_PAGE_COL_TOP: firstPageColTop,
+    }, reflowMode)
+  }
 
   // 페이지 분할 프리패스 — 최상위 lineseg vertpos는 페이지 로컬(페이지마다 0부터)이라
   // 역행 지점이 곧 페이지 경계다. 다단(colCount>1)은 단 이동도 vertpos가 리셋되지만
@@ -823,8 +856,19 @@ function renderSectionToPages(
   // 문단이 연속되면 vertpos가 매 페이지 0으로 같아서 strict 역행만으론 못 가른다
   // (의사일정표류: v0 문단 연속 → 뒤 페이지들이 전부 한 페이지에 겹침).
   // 문단 내부의 vertpos 동일 seg는 개체 좌우로 갈라진 같은 줄(h 우측 점프)이라 제외.
-  const colPr = findFirst(root, "colPr")
-  const multiCol = num(colPr, "colCount", 1) > 1
+  // 일부 한컴 HWPX는 다단의 horzpos를 본문 전체가 아닌 '단 내부 로컬 좌표'로
+  // 저장한다. 이 경우 단 이동과 페이지 이동 모두 vertpos만 0으로 돌아가므로,
+  // reset을 colCount만큼 순환해 단/페이지를 판별하고 오른쪽 단 x를 보정한다.
+  let maxCachedH = 0
+  for (const p of elements(root)) {
+    if (ln(p) !== "p") continue
+    const lsa = findChildByLocalName(p, "linesegarray")
+    if (!lsa) continue
+    for (const s of elements(lsa)) {
+      if (ln(s) === "lineseg") maxCachedH = Math.max(maxCachedH, num(s, "horzpos"))
+    }
+  }
+  const localColumnCoords = multiCol && maxCachedH < colW
   const paraSegPages = new Map<Element, number[]>()
   let nPages = 1
   let maxTopV = 0
@@ -832,6 +876,7 @@ function renderSectionToPages(
     let prevV = Number.NEGATIVE_INFINITY
     let prevH = Number.NEGATIVE_INFINITY
     let cur = 0
+    let col = 0
     for (const p of elements(root)) {
       if (ln(p) !== "p") continue
       const lsa = findChildByLocalName(p, "linesegarray")
@@ -841,13 +886,33 @@ function renderSectionToPages(
       for (const s of segEls) {
         const v = num(s, "vertpos")
         const h = num(s, "horzpos")
-        const brk = v < prevV
-          ? (!multiCol || h <= prevH)
-          : (paraFirst && v === prevV && h <= prevH)
-        if (brk) cur++
+        const reset = v < prevV || (paraFirst && v === prevV && h <= prevH)
+        if (reset) {
+          if (!multiCol) {
+            cur++
+          } else if (localColumnCoords) {
+            col++
+            if (col >= colCount) {
+              col = 0
+              cur++
+            }
+          } else if (h > prevH) {
+            col = Math.min(colCount - 1, Math.max(0, Math.round(h / (colW + colGap))))
+          } else {
+            col = 0
+            cur++
+          }
+        }
+        if (localColumnCoords && col > 0) {
+          s.setAttribute("horzpos", String(h + col * (colW + colGap)))
+        }
+        const adjustedV = localColumnCoords && cur === 0 && col > 0 && v < firstPageColTop
+          ? v + firstPageColTop
+          : v
+        if (adjustedV !== v) s.setAttribute("vertpos", String(adjustedV))
         paraFirst = false
         pagesOf.push(cur)
-        maxTopV = Math.max(maxTopV, v + num(s, "textheight", 1000))
+        maxTopV = Math.max(maxTopV, adjustedV + num(s, "textheight", 1000))
         prevV = v
         prevH = h
       }

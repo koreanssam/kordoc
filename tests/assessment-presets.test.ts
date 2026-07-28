@@ -80,6 +80,42 @@ describe("학교 평가 내장 프리셋", () => {
     }
   })
 
+  it("고사원안: Kordoc이 HWP에서 추출한 평문·HTML 표를 그대로 왕복", async () => {
+    const extracted = `<table>
+<tr><th>2026.4.28.(화) 2교시</th><th>국어<br>( 과목코드: 01)</th><th>영산중학교</th></tr>
+<tr><td>( 2 )학년</td><td>2026학년도 1학기 1차시험</td><td>전체쪽수<br>6쪽<br>전체문항수<br>2문항</td></tr>
+</table>
+
+※ 만점 20점 : 서술형 (20)점
+
+[서술형 1] 다음 글을 읽고 물음에 답하시오.
+
+첫 번째 본문입니다.
+
+서술형 1-1. 핵심 내용을 쓰시오. (5점)
+
+서술형 2. 다음 <보기>를 읽으시오.
+
+<table>
+<tr><th><보기></th></tr>
+<tr><td>민수: 첫째 발언<br>지수: 둘째 발언</td></tr>
+</table>
+
+서술형 2-1. 관점 차이를 쓰시오. (15점)
+
+\\* 확인 사항`
+    const buffer = await markdownToHwpx(extracted, { gongmun: { preset: "고사원안" } })
+    const zip = await JSZip.loadAsync(buffer)
+    const section = await zip.file("Contents/section0.xml")!.async("string")
+    assert.match(section, /2026\.4\.28\.\(화\) 2교시/)
+    assert.match(section, /\( 2 \)학년/)
+    assert.match(section, /2026학년도 1학기 1차시험/)
+    assert.match(section, /첫 번째 본문입니다/)
+    assert.match(section, /민수: 첫째 발언/)
+    assert.match(section, /관점 차이를 쓰시오/)
+    assert.match(section, /colCount="2"/)
+  })
+
   it("서술형문항채점기준표: 행 수를 마크다운 표에 맞춰 증감", async () => {
     const buffer = await markdownToHwpx(RUBRIC_MD, { gongmun: { preset: "서술형문항채점기준표" } })
     const zip = await JSZip.loadAsync(buffer)

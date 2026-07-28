@@ -205,6 +205,90 @@ function parseExamBlocks(body: string): ExamBlock[] {
   return blocks
 }
 
+function parseExtractedExamBlocks(body: string): ExamBlock[] {
+  const tables: string[] = []
+  const tokenized = body.replace(/<table\b[\s\S]*?<\/table>/gi, (table) => {
+    const index = tables.push(table) - 1
+    return `\n@@KORDOC_EXAM_TABLE_${index}@@\n`
+  })
+  const blocks: ExamBlock[] = []
+  let current: ExamPassage | null = null
+
+  for (const rawLine of tokenized.replace(/\r\n?/g, "\n").split("\n")) {
+    const line = rawLine.trim()
+    if (!line) continue
+    if (/^\\?\*\s*확인 사항/.test(line)) break
+
+    const tableToken = line.match(/^@@KORDOC_EXAM_TABLE_(\d+)@@$/)
+    if (tableToken) {
+      const table = tables[Number(tableToken[1])] ?? ""
+      if (!table.includes("<보기>")) continue // 첫 표는 시험지 머리표
+      const cells = [...table.matchAll(/<t[hd]\b[^>]*>([\s\S]*?)<\/t[hd]>/gi)]
+        .map((cell) => decodeHtmlText(cell[1]))
+        .filter((cell) => cell && cell !== "<보기>")
+      const content = cells.sort((a, b) => b.length - a.length)[0] ?? ""
+      blocks.push({ kind: "view", body: content.split("\n").map((v) => v.trim()).filter(Boolean) })
+      current = null
+      continue
+    }
+
+    const passage = line.match(/^\[(서술형\s*\d+)\]\s*(.+)$/)
+    if (passage) {
+      current = {
+        kind: "passage",
+        title: `[${passage[1].replace(/\s+/g, " ")}] ${stripInline(passage[2])}`,
+        body: [],
+      }
+      blocks.push(current)
+      continue
+    }
+
+    const question = line.match(/^서술형\s*\d+(?:-\d+)?\.\s*.+$/)
+    if (question) {
+      blocks.push({
+        kind: "question",
+        text: stripInline(line).replace(/\\~/g, "~").replace(/\s+/g, " "),
+      })
+      current = null
+      continue
+    }
+
+    if (current) current.body.push(stripInline(line).replace(/\\~/g, "~"))
+  }
+  return blocks
+}
+
+function enrichExamMeta(meta: FrontMatter, body: string): FrontMatter {
+  const out = { ...meta }
+  const tables = body.match(/<table\b[\s\S]*?<\/table>/gi) ?? []
+  const header = tables[0] ?? ""
+  const plainHeader = decodeHtmlText(header)
+  const date = plainHeader.match(/(\d{4}\.\d{1,2}\.\d{1,2}\.\([^)]+\)\s*\d+교시)/)
+  const subjectCode = header.match(/<t[hd]\b[^>]*>\s*([^<]+?)\s*<br\s*\/?>\s*\(\s*과목코드\s*:\s*([^)]+)\)/i)
+  const school = plainHeader.match(/과목코드\s*:[^)]*\)\s*([^\n]+학교)/)
+  const pages = plainHeader.match(/전체쪽수\s*(\d+)쪽/)
+  const questions = plainHeader.match(/전체문항수\s*(\d+)문항/)
+  const grade = plainHeader.match(/\(\s*(\d+)\s*\)학년/)
+  const exam = plainHeader.match(/(\d{4}학년도\s*\d+학기\s*\d+차시험)/)
+  const score = decodeHtmlText(body).match(/만점\s*(\d+(?:\.\d+)?)점\s*:\s*서술형\s*\((\d+(?:\.\d+)?)\)점/)
+
+  if (date) out["시험일시"] ??= date[1]
+  if (subjectCode) {
+    out["과목"] ??= subjectCode[1]
+    out["과목코드"] ??= subjectCode[2].trim()
+  }
+  if (school) out["학교"] ??= school[1].trim()
+  if (pages) out["전체쪽수"] ??= pages[1]
+  if (questions) out["전체문항수"] ??= questions[1]
+  if (grade) out["학년"] ??= grade[1]
+  if (exam) out["시험명"] ??= exam[1].replace(/\s+/g, " ")
+  if (score) {
+    out["만점"] ??= score[1]
+    out["서술형점수"] ??= score[2]
+  }
+  return out
+}
+
 function cloneClean<T extends XmlNode>(node: T): T {
   const clone = node.cloneNode(true) as T
   removeDescendants(clone, "linesegarray")
@@ -342,8 +426,11 @@ function adjustExamFooter(footerHost: XmlElement): void {
 }
 
 async function buildExam(markdown: string): Promise<ArrayBuffer> {
-  const { meta, body } = parseFrontMatter(markdown)
-  const blocks = parseExamBlocks(body)
+  const parsed = parseFrontMatter(markdown)
+  const body = parsed.body
+  const meta = enrichExamMeta(parsed.meta, body)
+  const authoredBlocks = parseExamBlocks(body)
+  const blocks = authoredBlocks.length > 0 ? authoredBlocks : parseExtractedExamBlocks(body)
   const zip = await loadTemplate("exam")
   const sectionFile = zip.file("Contents/section0.xml")
   if (!sectionFile) throw new Error("고사원안 템플릿에 Contents/section0.xml이 없습니다")

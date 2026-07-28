@@ -96,6 +96,24 @@ describe("render: 조판 캐시 없는 파일 거부", () => {
   })
 })
 
+describe("render: 다단 HWPX 단 내부 로컬 좌표", () => {
+  it("고사원안 템플릿의 두 번째 단을 별도 페이지가 아닌 첫 페이지 오른쪽에 배치", async () => {
+    const template = readFileSync(join(
+      dirname(fileURLToPath(import.meta.url)),
+      "..",
+      "templates",
+      "assessment",
+      "exam-template.hwpx",
+    ))
+    const r = await renderHwpxToSvg(new Uint8Array(template))
+    const firstPage = r.svg.split('<g data-page="2"')[0]
+    const rightBodyText = [...firstPage.matchAll(/<text x="([\d.]+)" y="([\d.]+)"[^>]*>/g)]
+      .some((m) => Number(m[1]) > 300 && Number(m[2]) > 150)
+    assert.equal(rightBodyText, true, "첫 페이지 오른쪽 단 본문이 비어 있음")
+    assert.ok(r.pageCount < 9, `단 이동을 페이지로 오인함: ${r.pageCount}페이지`)
+  })
+})
+
 describe("render: 문단별 줄나눔 wrapMode (breakSetting 이름 역전 매핑)", () => {
   it("parseRenderStyles — BREAK_WORD→keep(어절) / KEEP_WORD→charAll(글자) / 없음→undefined", async () => {
     const { parseRenderStyles } = await import("../src/render/head-styles.js")
