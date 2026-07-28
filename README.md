@@ -536,6 +536,39 @@ PDF 파싱(pdfjs-dist)·수식 OCR 등 선택 의존성은 **기본 설치**됩�
 설치 용량을 줄이려면 `npm install kordoc --omit=optional` 로 스킵할 수 있습니다 —
 이 경우 PDF 파싱·수식 OCR·인쇄 렌더 등 일부 기능이 제한됩니다.
 
+### GitHub 저장소 개발 버전을 `kordoc` 명령으로 등록
+
+평가 프리셋이 포함된 이 저장소의 기능 브랜치를 직접 사용하는 macOS 환경에서는 다음과
+같이 설치할 수 있습니다. `~/.local/bin`이 PATH에 없다면 마지막 `export PATH` 줄도
+실행합니다.
+
+```bash
+gh repo clone koreanssam/kordoc ~/.local/share/kordoc-custom -- --branch feat/assessment-presets-v4
+cd ~/.local/share/kordoc-custom
+npm install
+npm run build
+
+mkdir -p ~/.local/bin
+ln -sfn "$PWD/dist/cli.js" ~/.local/bin/kordoc
+export PATH="$HOME/.local/bin:$PATH"
+
+kordoc --version
+```
+
+새 터미널에서도 계속 사용하려면 PATH 설정을 셸 설정에 한 번만 추가합니다.
+
+```bash
+printf '\nexport PATH="$HOME/.local/bin:$PATH"\n' >> ~/.zshrc
+source ~/.zshrc
+```
+
+평가 문서 생성 명령은 다음과 같습니다.
+
+```bash
+kordoc generate 고사원안.md -o 고사원안.hwpx --preset 고사원안
+kordoc generate 채점표.md -o 채점기준표.hwpx --preset 서술형문항채점기준표
+```
+
 ## 빠른 시작
 
 ### 문서 파싱
