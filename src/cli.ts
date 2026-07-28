@@ -3,7 +3,7 @@
 import { readFileSync, writeFileSync, mkdirSync, statSync } from "fs"
 import { basename, dirname, resolve, extname } from "path"
 import { Command } from "commander"
-import { parse, detectFormat, detectZipFormat, fillFormFields, extractFormFields, blocksToMarkdown, markdownToHwpx, fillHwpx, fillWithUniqueGuard, hwpxToProfile, PRESET_ALIAS, unknownFontWarnings, incompatibleGongmunWarnings, lintGongmunText, gongmunLintWarnings } from "./index.js"
+import { parse, detectFormat, detectZipFormat, fillFormFields, extractFormFields, blocksToMarkdown, markdownToHwpx, fillHwpx, fillWithUniqueGuard, hwpxToProfile, PRESET_ALIAS, unknownFontWarnings, incompatibleGongmunWarnings, lintGongmunText, gongmunLintWarnings, isAssessmentPreset } from "./index.js"
 import type { FillInput } from "./index.js"
 import { parseFormatProfileJson } from "./hwpx/profile-io.js"
 import { buildGongmunOptions, BODY_FONTS, H2_MARKERS, BULLET2_CHARS } from "./hwpx/gongmun-surface.js"
@@ -532,7 +532,7 @@ program
   .alias("gen")
   .description("마크다운 → 공문서 HWPX 생성 — kordoc generate 보고서.md -o 보고서.hwpx --preset 보고서 (markdown에 '-' 지정 시 stdin)")
   .option("-o, --output <path>", "출력 HWPX 경로 (기본: <입력>.hwpx)")
-  .option("--preset <name>", "공문서 프리셋: 기안문(official)·보고서(report)·계획서(plan)·통지(notice)·회의록(minutes)·개조식(gaejosik — 표지·목차·장헤더 자동)·보도자료(press)", "기안문")
+  .option("--preset <name>", "문서 프리셋: 기안문·보고서·계획서·통지·회의록·개조식·보도자료·고사원안(exam)·서술형문항채점기준표(rubric)", "기안문")
   .option("--font <type>", "본문 글꼴: myeongjo(함초롬바탕) 또는 gothic(맑은 고딕)")
   .option("--pt <size>", "본문 글자 크기(pt)")
   .option("--line-spacing <percent>", "본문 줄간격(%)")
@@ -585,7 +585,7 @@ program
       if (!opts.plain) {
         const preset = PRESET_ALIAS[String(opts.preset).trim()]
         if (!preset) {
-          process.stderr.write(`[kordoc] 알 수 없는 프리셋: ${opts.preset} (기안문/보고서/계획서/통지/회의록/개조식/보도자료)\n`)
+          process.stderr.write(`[kordoc] 알 수 없는 프리셋: ${opts.preset} (기안문/보고서/계획서/통지/회의록/개조식/보도자료/고사원안/서술형문항채점기준표)\n`)
           process.exit(1)
         }
         const enumCheck = <T extends readonly string[]>(flag: string, value: unknown, allowed: T): (typeof allowed)[number] | undefined => {
@@ -659,7 +659,7 @@ program
         for (const w of incompatibleGongmunWarnings(gongmun)) process.stderr.write(`[kordoc] ⚠ ${w}\n`)
       }
       // 공문서 표기법 검수 (편람 기준, 조언용) — 생성은 진행, stderr 경고만
-      if (gongmun && !silent) {
+      if (gongmun && !isAssessmentPreset(String(gongmun.preset)) && !silent) {
         for (const w of gongmunLintWarnings(md, 5)) process.stderr.write(`[kordoc] ⚠ ${w}\n`)
       }
 
@@ -676,7 +676,9 @@ program
       writeFileSync(outPath, Buffer.from(buf))
 
       if (!silent) {
-        const mode = gongmun ? `공문서:${gongmun.preset}` : "범용"
+        const mode = gongmun
+          ? `${isAssessmentPreset(String(gongmun.preset)) ? "평가문서" : "공문서"}:${gongmun.preset}`
+          : "범용"
         process.stderr.write(`[kordoc] HWPX 생성 (${mode}) → ${outPath}\n`)
       }
     } catch (err) {

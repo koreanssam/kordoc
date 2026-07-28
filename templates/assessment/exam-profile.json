@@ -1,0 +1,1738 @@
+{
+  "schema_version": "0.3.0",
+  "tables": [
+    {
+      "table_index": 0,
+      "rows": 4,
+      "cols": 6,
+      "cells": [
+        {
+          "row": 0,
+          "col": 0,
+          "rowSpan": 2,
+          "colSpan": 1,
+          "width_hwpunit": "14724",
+          "height_hwpunit": "3055",
+          "borderFillIDRef": "7",
+          "charPrIDRef": "24"
+        },
+        {
+          "row": 0,
+          "col": 1,
+          "rowSpan": 4,
+          "colSpan": 1,
+          "width_hwpunit": "683",
+          "height_hwpunit": "5716",
+          "borderFillIDRef": "14",
+          "charPrIDRef": "22"
+        },
+        {
+          "row": 0,
+          "col": 2,
+          "rowSpan": 3,
+          "colSpan": 1,
+          "width_hwpunit": "17745",
+          "height_hwpunit": "3620",
+          "borderFillIDRef": "12",
+          "charPrIDRef": "26"
+        },
+        {
+          "row": 0,
+          "col": 3,
+          "rowSpan": 4,
+          "colSpan": 1,
+          "width_hwpunit": "705",
+          "height_hwpunit": "5716",
+          "borderFillIDRef": "15",
+          "charPrIDRef": "23"
+        },
+        {
+          "row": 0,
+          "col": 4,
+          "rowSpan": 1,
+          "colSpan": 2,
+          "width_hwpunit": "16594",
+          "height_hwpunit": "2489",
+          "borderFillIDRef": "17",
+          "charPrIDRef": "28"
+        },
+        {
+          "row": 1,
+          "col": 4,
+          "rowSpan": 3,
+          "colSpan": 1,
+          "width_hwpunit": "8299",
+          "height_hwpunit": "3423",
+          "borderFillIDRef": "18",
+          "charPrIDRef": "24"
+        },
+        {
+          "row": 1,
+          "col": 5,
+          "rowSpan": 3,
+          "colSpan": 1,
+          "width_hwpunit": "8295",
+          "height_hwpunit": "3423",
+          "borderFillIDRef": "16",
+          "charPrIDRef": "24"
+        },
+        {
+          "row": 2,
+          "col": 0,
+          "rowSpan": 2,
+          "colSpan": 1,
+          "width_hwpunit": "14724",
+          "height_hwpunit": "2661",
+          "borderFillIDRef": "6",
+          "charPrIDRef": "21"
+        },
+        {
+          "row": 3,
+          "col": 2,
+          "rowSpan": 1,
+          "colSpan": 1,
+          "width_hwpunit": "17745",
+          "height_hwpunit": "2292",
+          "borderFillIDRef": "13",
+          "charPrIDRef": "29"
+        }
+      ],
+      "used_border_fills": {
+        "6": {
+          "leftBorder": {
+            "type": "SOLID",
+            "width": "0.4 mm",
+            "color": "#000000"
+          },
+          "rightBorder": {
+            "type": "SOLID",
+            "width": "0.12 mm",
+            "color": "#000000"
+          },
+          "topBorder": {
+            "type": "SOLID",
+            "width": "0.12 mm",
+            "color": "#000000"
+          },
+          "bottomBorder": {
+            "type": "SOLID",
+            "width": "0.4 mm",
+            "color": "#000000"
+          }
+        },
+        "7": {
+          "leftBorder": {
+            "type": "SOLID",
+            "width": "0.4 mm",
+            "color": "#000000"
+          },
+          "rightBorder": {
+            "type": "SOLID",
+            "width": "0.12 mm",
+            "color": "#000000"
+          },
+          "topBorder": {
+            "type": "SOLID",
+            "width": "0.4 mm",
+            "color": "#000000"
+          },
+          "bottomBorder": {
+            "type": "SOLID",
+            "width": "0.12 mm",
+            "color": "#000000"
+          }
+        },
+        "12": {
+          "leftBorder": {
+            "type": "NONE",
+            "width": "0.1 mm",
+            "color": "#000000"
+          },
+          "rightBorder": {
+            "type": "NONE",
+            "width": "0.1 mm",
+            "color": "#000000"
+          },
+          "topBorder": {
+            "type": "SOLID",
+            "width": "0.4 mm",
+            "color": "#000000"
+          },
+          "bottomBorder": {
+            "type": "SOLID",
+            "width": "0.12 mm",
+            "color": "#000000"
+          }
+        },
+        "13": {
+          "leftBorder": {
+            "type": "NONE",
+            "width": "0.1 mm",
+            "color": "#000000"
+          },
+          "rightBorder": {
+            "type": "NONE",
+            "width": "0.1 mm",
+            "color": "#000000"
+          },
+          "topBorder": {
+            "type": "SOLID",
+            "width": "0.12 mm",
+            "color": "#000000"
+          },
+          "bottomBorder": {
+            "type": "SOLID",
+            "width": "0.4 mm",
+            "color": "#000000"
+          }
+        },
+        "14": {
+          "leftBorder": {
+            "type": "SOLID",
+            "width": "0.12 mm",
+            "color": "#000000"
+          },
+          "rightBorder": {
+            "type": "NONE",
+            "width": "0.1 mm",
+            "color": "#000000"
+          },
+          "topBorder": {
+            "type": "SOLID",
+            "width": "0.4 mm",
+            "color": "#000000"
+          },
+          "bottomBorder": {
+            "type": "SOLID",
+            "width": "0.4 mm",
+            "color": "#000000"
+          },
+          "fill": {
+            "faceColor": "#AEAEAE"
+          }
+        },
+        "15": {
+          "leftBorder": {
+            "type": "NONE",
+            "width": "0.1 mm",
+            "color": "#000000"
+          },
+          "rightBorder": {
+            "type": "SOLID",
+            "width": "0.12 mm",
+            "color": "#000000"
+          },
+          "topBorder": {
+            "type": "SOLID",
+            "width": "0.4 mm",
+            "color": "#000000"
+          },
+          "bottomBorder": {
+            "type": "SOLID",
+            "width": "0.4 mm",
+            "color": "#000000"
+          },
+          "fill": {
+            "faceColor": "#AEAEAE"
+          }
+        },
+        "16": {
+          "leftBorder": {
+            "type": "SOLID",
+            "width": "0.12 mm",
+            "color": "#000000"
+          },
+          "rightBorder": {
+            "type": "SOLID",
+            "width": "0.4 mm",
+            "color": "#000000"
+          },
+          "topBorder": {
+            "type": "SOLID",
+            "width": "0.15 mm",
+            "color": "#000000"
+          },
+          "bottomBorder": {
+            "type": "SOLID",
+            "width": "0.4 mm",
+            "color": "#000000"
+          }
+        },
+        "17": {
+          "leftBorder": {
+            "type": "SOLID",
+            "width": "0.12 mm",
+            "color": "#000000"
+          },
+          "rightBorder": {
+            "type": "SOLID",
+            "width": "0.4 mm",
+            "color": "#000000"
+          },
+          "topBorder": {
+            "type": "SOLID",
+            "width": "0.4 mm",
+            "color": "#000000"
+          },
+          "bottomBorder": {
+            "type": "SOLID",
+            "width": "0.15 mm",
+            "color": "#000000"
+          }
+        },
+        "18": {
+          "leftBorder": {
+            "type": "SOLID",
+            "width": "0.12 mm",
+            "color": "#000000"
+          },
+          "rightBorder": {
+            "type": "SOLID",
+            "width": "0.12 mm",
+            "color": "#000000"
+          },
+          "topBorder": {
+            "type": "SOLID",
+            "width": "0.15 mm",
+            "color": "#000000"
+          },
+          "bottomBorder": {
+            "type": "SOLID",
+            "width": "0.4 mm",
+            "color": "#000000"
+          }
+        }
+      },
+      "anchor_text": "2026428화2교시",
+      "anchor_row": "2026428화2교시||국어과목코드01||영산중학교|",
+      "width_hwpunit": "50451",
+      "col_widths_hwpunit": [
+        "14724",
+        "683",
+        "17745",
+        "705",
+        "8299",
+        "8295"
+      ],
+      "used_char_prs": {
+        "21": {
+          "height_hwpunit": "1700",
+          "textColor": "#000000",
+          "underline": true,
+          "fontRef_hangul": "9",
+          "fontName_hangul": "HY헤드라인M"
+        },
+        "22": {
+          "height_hwpunit": "900",
+          "textColor": "#000000",
+          "underline": true,
+          "fontRef_hangul": "1",
+          "fontName_hangul": "굴림체"
+        },
+        "23": {
+          "height_hwpunit": "1100",
+          "textColor": "#000000",
+          "underline": true,
+          "fontRef_hangul": "1",
+          "fontName_hangul": "굴림체"
+        },
+        "24": {
+          "height_hwpunit": "1100",
+          "textColor": "#000000",
+          "underline": true,
+          "fontRef_hangul": "1",
+          "fontName_hangul": "굴림체"
+        },
+        "26": {
+          "height_hwpunit": "2000",
+          "textColor": "#000000",
+          "underline": true,
+          "fontRef_hangul": "9",
+          "fontName_hangul": "HY헤드라인M"
+        },
+        "28": {
+          "height_hwpunit": "1500",
+          "textColor": "#000000",
+          "underline": true,
+          "fontRef_hangul": "6",
+          "fontName_hangul": "함초롬바탕"
+        },
+        "29": {
+          "height_hwpunit": "1200",
+          "textColor": "#000000",
+          "underline": true,
+          "fontRef_hangul": "6",
+          "fontName_hangul": "함초롬바탕"
+        }
+      }
+    },
+    {
+      "table_index": 1,
+      "rows": 1,
+      "cols": 1,
+      "cells": [
+        {
+          "row": 0,
+          "col": 0,
+          "rowSpan": 1,
+          "colSpan": 1,
+          "width_hwpunit": "44786",
+          "height_hwpunit": "282",
+          "borderFillIDRef": "2",
+          "charPrIDRef": "13"
+        }
+      ],
+      "used_border_fills": {
+        "2": {
+          "leftBorder": {
+            "type": "SOLID",
+            "width": "0.12 mm",
+            "color": "#000000"
+          },
+          "rightBorder": {
+            "type": "SOLID",
+            "width": "0.12 mm",
+            "color": "#000000"
+          },
+          "topBorder": {
+            "type": "SOLID",
+            "width": "0.12 mm",
+            "color": "#000000"
+          },
+          "bottomBorder": {
+            "type": "SOLID",
+            "width": "0.12 mm",
+            "color": "#000000"
+          }
+        }
+      },
+      "anchor_text": "이시험문제는영산중학교의저작물이므로무단복제하면",
+      "anchor_row": "이시험문제는영산중학교의저작물이므로무단복제하면",
+      "width_hwpunit": "44786",
+      "col_widths_hwpunit": [
+        "44786"
+      ],
+      "used_char_prs": {
+        "13": {
+          "height_hwpunit": "1000",
+          "textColor": "#000000",
+          "underline": true,
+          "fontRef_hangul": "0",
+          "fontName_hangul": "굴림"
+        }
+      }
+    },
+    {
+      "table_index": 2,
+      "rows": 2,
+      "cols": 1,
+      "cells": [
+        {
+          "row": 0,
+          "col": 0,
+          "rowSpan": 1,
+          "colSpan": 1,
+          "width_hwpunit": "24560",
+          "height_hwpunit": "1548",
+          "borderFillIDRef": "20",
+          "charPrIDRef": "36"
+        },
+        {
+          "row": 1,
+          "col": 0,
+          "rowSpan": 1,
+          "colSpan": 1,
+          "width_hwpunit": "24560",
+          "height_hwpunit": "39081",
+          "borderFillIDRef": "19",
+          "charPrIDRef": "47"
+        }
+      ],
+      "used_border_fills": {
+        "19": {
+          "leftBorder": {
+            "type": "SOLID",
+            "width": "0.12 mm",
+            "color": "#000000"
+          },
+          "rightBorder": {
+            "type": "SOLID",
+            "width": "0.12 mm",
+            "color": "#000000"
+          },
+          "topBorder": {
+            "type": "SOLID",
+            "width": "0.12 mm",
+            "color": "#000000"
+          },
+          "bottomBorder": {
+            "type": "SOLID",
+            "width": "0.12 mm",
+            "color": "#000000"
+          }
+        },
+        "20": {
+          "leftBorder": {
+            "type": "NONE",
+            "width": "0.1 mm",
+            "color": "#000000"
+          },
+          "rightBorder": {
+            "type": "NONE",
+            "width": "0.1 mm",
+            "color": "#000000"
+          },
+          "topBorder": {
+            "type": "NONE",
+            "width": "0.1 mm",
+            "color": "#000000"
+          },
+          "bottomBorder": {
+            "type": "SOLID",
+            "width": "0.12 mm",
+            "color": "#000000"
+          }
+        }
+      },
+      "anchor_text": "서술형1다음글을읽고아래의물음에답하시오",
+      "anchor_row": "서술형1다음글을읽고아래의물음에답하시오",
+      "width_hwpunit": "24560",
+      "col_widths_hwpunit": [
+        "24560"
+      ],
+      "used_char_prs": {
+        "36": {
+          "height_hwpunit": "900",
+          "textColor": "#000000",
+          "underline": true,
+          "fontRef_hangul": "0",
+          "fontName_hangul": "굴림"
+        },
+        "47": {
+          "height_hwpunit": "1000",
+          "textColor": "#000000",
+          "underline": true,
+          "fontRef_hangul": "16",
+          "fontName_hangul": "나눔명조"
+        }
+      }
+    },
+    {
+      "table_index": 3,
+      "rows": 2,
+      "cols": 1,
+      "cells": [
+        {
+          "row": 0,
+          "col": 0,
+          "rowSpan": 1,
+          "colSpan": 1,
+          "width_hwpunit": "24560",
+          "height_hwpunit": "1548",
+          "borderFillIDRef": "20",
+          "charPrIDRef": "36"
+        },
+        {
+          "row": 1,
+          "col": 0,
+          "rowSpan": 1,
+          "colSpan": 1,
+          "width_hwpunit": "24560",
+          "height_hwpunit": "39081",
+          "borderFillIDRef": "19",
+          "charPrIDRef": "48"
+        }
+      ],
+      "used_border_fills": {
+        "19": {
+          "leftBorder": {
+            "type": "SOLID",
+            "width": "0.12 mm",
+            "color": "#000000"
+          },
+          "rightBorder": {
+            "type": "SOLID",
+            "width": "0.12 mm",
+            "color": "#000000"
+          },
+          "topBorder": {
+            "type": "SOLID",
+            "width": "0.12 mm",
+            "color": "#000000"
+          },
+          "bottomBorder": {
+            "type": "SOLID",
+            "width": "0.12 mm",
+            "color": "#000000"
+          }
+        },
+        "20": {
+          "leftBorder": {
+            "type": "NONE",
+            "width": "0.1 mm",
+            "color": "#000000"
+          },
+          "rightBorder": {
+            "type": "NONE",
+            "width": "0.1 mm",
+            "color": "#000000"
+          },
+          "topBorder": {
+            "type": "NONE",
+            "width": "0.1 mm",
+            "color": "#000000"
+          },
+          "bottomBorder": {
+            "type": "SOLID",
+            "width": "0.12 mm",
+            "color": "#000000"
+          }
+        }
+      },
+      "anchor_text": "서술형2다음글을읽고아래의물음에답하시오",
+      "anchor_row": "서술형2다음글을읽고아래의물음에답하시오",
+      "width_hwpunit": "24560",
+      "col_widths_hwpunit": [
+        "24560"
+      ],
+      "used_char_prs": {
+        "36": {
+          "height_hwpunit": "900",
+          "textColor": "#000000",
+          "underline": true,
+          "fontRef_hangul": "0",
+          "fontName_hangul": "굴림"
+        },
+        "48": {
+          "height_hwpunit": "1000",
+          "textColor": "#000000",
+          "underline": true,
+          "fontRef_hangul": "16",
+          "fontName_hangul": "나눔명조"
+        }
+      }
+    },
+    {
+      "table_index": 4,
+      "rows": 2,
+      "cols": 1,
+      "cells": [
+        {
+          "row": 0,
+          "col": 0,
+          "rowSpan": 1,
+          "colSpan": 1,
+          "width_hwpunit": "24560",
+          "height_hwpunit": "1548",
+          "borderFillIDRef": "20",
+          "charPrIDRef": "36"
+        },
+        {
+          "row": 1,
+          "col": 0,
+          "rowSpan": 1,
+          "colSpan": 1,
+          "width_hwpunit": "24560",
+          "height_hwpunit": "33896",
+          "borderFillIDRef": "19",
+          "charPrIDRef": "48"
+        }
+      ],
+      "used_border_fills": {
+        "19": {
+          "leftBorder": {
+            "type": "SOLID",
+            "width": "0.12 mm",
+            "color": "#000000"
+          },
+          "rightBorder": {
+            "type": "SOLID",
+            "width": "0.12 mm",
+            "color": "#000000"
+          },
+          "topBorder": {
+            "type": "SOLID",
+            "width": "0.12 mm",
+            "color": "#000000"
+          },
+          "bottomBorder": {
+            "type": "SOLID",
+            "width": "0.12 mm",
+            "color": "#000000"
+          }
+        },
+        "20": {
+          "leftBorder": {
+            "type": "NONE",
+            "width": "0.1 mm",
+            "color": "#000000"
+          },
+          "rightBorder": {
+            "type": "NONE",
+            "width": "0.1 mm",
+            "color": "#000000"
+          },
+          "topBorder": {
+            "type": "NONE",
+            "width": "0.1 mm",
+            "color": "#000000"
+          },
+          "bottomBorder": {
+            "type": "SOLID",
+            "width": "0.12 mm",
+            "color": "#000000"
+          }
+        }
+      },
+      "anchor_text": "서술형3다음글을읽고아래의물음에답하시오",
+      "anchor_row": "서술형3다음글을읽고아래의물음에답하시오",
+      "width_hwpunit": "24560",
+      "col_widths_hwpunit": [
+        "24560"
+      ],
+      "used_char_prs": {
+        "36": {
+          "height_hwpunit": "900",
+          "textColor": "#000000",
+          "underline": true,
+          "fontRef_hangul": "0",
+          "fontName_hangul": "굴림"
+        },
+        "48": {
+          "height_hwpunit": "1000",
+          "textColor": "#000000",
+          "underline": true,
+          "fontRef_hangul": "16",
+          "fontName_hangul": "나눔명조"
+        }
+      }
+    },
+    {
+      "table_index": 5,
+      "rows": 2,
+      "cols": 1,
+      "cells": [
+        {
+          "row": 0,
+          "col": 0,
+          "rowSpan": 1,
+          "colSpan": 1,
+          "width_hwpunit": "24560",
+          "height_hwpunit": "1548",
+          "borderFillIDRef": "20",
+          "charPrIDRef": "36"
+        },
+        {
+          "row": 1,
+          "col": 0,
+          "rowSpan": 1,
+          "colSpan": 1,
+          "width_hwpunit": "24560",
+          "height_hwpunit": "33896",
+          "borderFillIDRef": "19",
+          "charPrIDRef": "47"
+        }
+      ],
+      "used_border_fills": {
+        "19": {
+          "leftBorder": {
+            "type": "SOLID",
+            "width": "0.12 mm",
+            "color": "#000000"
+          },
+          "rightBorder": {
+            "type": "SOLID",
+            "width": "0.12 mm",
+            "color": "#000000"
+          },
+          "topBorder": {
+            "type": "SOLID",
+            "width": "0.12 mm",
+            "color": "#000000"
+          },
+          "bottomBorder": {
+            "type": "SOLID",
+            "width": "0.12 mm",
+            "color": "#000000"
+          }
+        },
+        "20": {
+          "leftBorder": {
+            "type": "NONE",
+            "width": "0.1 mm",
+            "color": "#000000"
+          },
+          "rightBorder": {
+            "type": "NONE",
+            "width": "0.1 mm",
+            "color": "#000000"
+          },
+          "topBorder": {
+            "type": "NONE",
+            "width": "0.1 mm",
+            "color": "#000000"
+          },
+          "bottomBorder": {
+            "type": "SOLID",
+            "width": "0.12 mm",
+            "color": "#000000"
+          }
+        }
+      },
+      "anchor_text": "서술형4다음글을읽고아래의물음에답하시오",
+      "anchor_row": "서술형4다음글을읽고아래의물음에답하시오",
+      "width_hwpunit": "24560",
+      "col_widths_hwpunit": [
+        "24560"
+      ],
+      "used_char_prs": {
+        "36": {
+          "height_hwpunit": "900",
+          "textColor": "#000000",
+          "underline": true,
+          "fontRef_hangul": "0",
+          "fontName_hangul": "굴림"
+        },
+        "47": {
+          "height_hwpunit": "1000",
+          "textColor": "#000000",
+          "underline": true,
+          "fontRef_hangul": "16",
+          "fontName_hangul": "나눔명조"
+        }
+      }
+    },
+    {
+      "table_index": 6,
+      "rows": 2,
+      "cols": 1,
+      "cells": [
+        {
+          "row": 0,
+          "col": 0,
+          "rowSpan": 1,
+          "colSpan": 1,
+          "width_hwpunit": "24560",
+          "height_hwpunit": "1548",
+          "borderFillIDRef": "20",
+          "charPrIDRef": "36"
+        },
+        {
+          "row": 1,
+          "col": 0,
+          "rowSpan": 1,
+          "colSpan": 1,
+          "width_hwpunit": "24560",
+          "height_hwpunit": "33896",
+          "borderFillIDRef": "19",
+          "charPrIDRef": "47"
+        }
+      ],
+      "used_border_fills": {
+        "19": {
+          "leftBorder": {
+            "type": "SOLID",
+            "width": "0.12 mm",
+            "color": "#000000"
+          },
+          "rightBorder": {
+            "type": "SOLID",
+            "width": "0.12 mm",
+            "color": "#000000"
+          },
+          "topBorder": {
+            "type": "SOLID",
+            "width": "0.12 mm",
+            "color": "#000000"
+          },
+          "bottomBorder": {
+            "type": "SOLID",
+            "width": "0.12 mm",
+            "color": "#000000"
+          }
+        },
+        "20": {
+          "leftBorder": {
+            "type": "NONE",
+            "width": "0.1 mm",
+            "color": "#000000"
+          },
+          "rightBorder": {
+            "type": "NONE",
+            "width": "0.1 mm",
+            "color": "#000000"
+          },
+          "topBorder": {
+            "type": "NONE",
+            "width": "0.1 mm",
+            "color": "#000000"
+          },
+          "bottomBorder": {
+            "type": "SOLID",
+            "width": "0.12 mm",
+            "color": "#000000"
+          }
+        }
+      },
+      "anchor_text": "서술형5다음글을읽고아래의물음에답하시오",
+      "anchor_row": "서술형5다음글을읽고아래의물음에답하시오",
+      "width_hwpunit": "24560",
+      "col_widths_hwpunit": [
+        "24560"
+      ],
+      "used_char_prs": {
+        "36": {
+          "height_hwpunit": "900",
+          "textColor": "#000000",
+          "underline": true,
+          "fontRef_hangul": "0",
+          "fontName_hangul": "굴림"
+        },
+        "47": {
+          "height_hwpunit": "1000",
+          "textColor": "#000000",
+          "underline": true,
+          "fontRef_hangul": "16",
+          "fontName_hangul": "나눔명조"
+        }
+      }
+    },
+    {
+      "table_index": 7,
+      "rows": 2,
+      "cols": 1,
+      "cells": [
+        {
+          "row": 0,
+          "col": 0,
+          "rowSpan": 1,
+          "colSpan": 1,
+          "width_hwpunit": "24560",
+          "height_hwpunit": "1548",
+          "borderFillIDRef": "20",
+          "charPrIDRef": "36"
+        },
+        {
+          "row": 1,
+          "col": 0,
+          "rowSpan": 1,
+          "colSpan": 1,
+          "width_hwpunit": "24560",
+          "height_hwpunit": "21727",
+          "borderFillIDRef": "19",
+          "charPrIDRef": "47"
+        }
+      ],
+      "used_border_fills": {
+        "19": {
+          "leftBorder": {
+            "type": "SOLID",
+            "width": "0.12 mm",
+            "color": "#000000"
+          },
+          "rightBorder": {
+            "type": "SOLID",
+            "width": "0.12 mm",
+            "color": "#000000"
+          },
+          "topBorder": {
+            "type": "SOLID",
+            "width": "0.12 mm",
+            "color": "#000000"
+          },
+          "bottomBorder": {
+            "type": "SOLID",
+            "width": "0.12 mm",
+            "color": "#000000"
+          }
+        },
+        "20": {
+          "leftBorder": {
+            "type": "NONE",
+            "width": "0.1 mm",
+            "color": "#000000"
+          },
+          "rightBorder": {
+            "type": "NONE",
+            "width": "0.1 mm",
+            "color": "#000000"
+          },
+          "topBorder": {
+            "type": "NONE",
+            "width": "0.1 mm",
+            "color": "#000000"
+          },
+          "bottomBorder": {
+            "type": "SOLID",
+            "width": "0.12 mm",
+            "color": "#000000"
+          }
+        }
+      },
+      "anchor_text": "서술형6다음글을읽고아래의물음에답하시오",
+      "anchor_row": "서술형6다음글을읽고아래의물음에답하시오",
+      "width_hwpunit": "24560",
+      "col_widths_hwpunit": [
+        "24560"
+      ],
+      "used_char_prs": {
+        "36": {
+          "height_hwpunit": "900",
+          "textColor": "#000000",
+          "underline": true,
+          "fontRef_hangul": "0",
+          "fontName_hangul": "굴림"
+        },
+        "47": {
+          "height_hwpunit": "1000",
+          "textColor": "#000000",
+          "underline": true,
+          "fontRef_hangul": "16",
+          "fontName_hangul": "나눔명조"
+        }
+      }
+    },
+    {
+      "table_index": 8,
+      "rows": 4,
+      "cols": 3,
+      "cells": [
+        {
+          "row": 0,
+          "col": 0,
+          "rowSpan": 1,
+          "colSpan": 1,
+          "width_hwpunit": "9655",
+          "height_hwpunit": "500",
+          "borderFillIDRef": "24",
+          "charPrIDRef": "39"
+        },
+        {
+          "row": 0,
+          "col": 1,
+          "rowSpan": 2,
+          "colSpan": 1,
+          "width_hwpunit": "5660",
+          "height_hwpunit": "1000",
+          "borderFillIDRef": "25",
+          "charPrIDRef": "38"
+        },
+        {
+          "row": 0,
+          "col": 2,
+          "rowSpan": 1,
+          "colSpan": 1,
+          "width_hwpunit": "9056",
+          "height_hwpunit": "500",
+          "borderFillIDRef": "24",
+          "charPrIDRef": "39"
+        },
+        {
+          "row": 1,
+          "col": 0,
+          "rowSpan": 1,
+          "colSpan": 1,
+          "width_hwpunit": "9655",
+          "height_hwpunit": "500",
+          "borderFillIDRef": "26",
+          "charPrIDRef": "39"
+        },
+        {
+          "row": 1,
+          "col": 2,
+          "rowSpan": 1,
+          "colSpan": 1,
+          "width_hwpunit": "9056",
+          "height_hwpunit": "500",
+          "borderFillIDRef": "27",
+          "charPrIDRef": "39"
+        },
+        {
+          "row": 2,
+          "col": 0,
+          "rowSpan": 1,
+          "colSpan": 3,
+          "width_hwpunit": "24371",
+          "height_hwpunit": "1000",
+          "borderFillIDRef": "28",
+          "charPrIDRef": "50"
+        },
+        {
+          "row": 3,
+          "col": 0,
+          "rowSpan": 1,
+          "colSpan": 3,
+          "width_hwpunit": "24371",
+          "height_hwpunit": "0",
+          "borderFillIDRef": "29",
+          "charPrIDRef": "33"
+        }
+      ],
+      "used_border_fills": {
+        "24": {
+          "leftBorder": {
+            "type": "NONE",
+            "width": "0.12 mm",
+            "color": "#5D5D5D"
+          },
+          "rightBorder": {
+            "type": "NONE",
+            "width": "0.12 mm",
+            "color": "#5D5D5D"
+          },
+          "topBorder": {
+            "type": "NONE",
+            "width": "0.12 mm",
+            "color": "#5D5D5D"
+          },
+          "bottomBorder": {
+            "type": "SOLID",
+            "width": "0.12 mm",
+            "color": "#5D5D5D"
+          }
+        },
+        "25": {
+          "leftBorder": {
+            "type": "NONE",
+            "width": "0.12 mm",
+            "color": "#5D5D5D"
+          },
+          "rightBorder": {
+            "type": "NONE",
+            "width": "0.12 mm",
+            "color": "#5D5D5D"
+          },
+          "topBorder": {
+            "type": "NONE",
+            "width": "0.12 mm",
+            "color": "#5D5D5D"
+          },
+          "bottomBorder": {
+            "type": "NONE",
+            "width": "0.12 mm",
+            "color": "#5D5D5D"
+          }
+        },
+        "26": {
+          "leftBorder": {
+            "type": "SOLID",
+            "width": "0.12 mm",
+            "color": "#5D5D5D"
+          },
+          "rightBorder": {
+            "type": "NONE",
+            "width": "0.12 mm",
+            "color": "#5D5D5D"
+          },
+          "topBorder": {
+            "type": "SOLID",
+            "width": "0.12 mm",
+            "color": "#5D5D5D"
+          },
+          "bottomBorder": {
+            "type": "NONE",
+            "width": "0.12 mm",
+            "color": "#5D5D5D"
+          }
+        },
+        "27": {
+          "leftBorder": {
+            "type": "NONE",
+            "width": "0.12 mm",
+            "color": "#5D5D5D"
+          },
+          "rightBorder": {
+            "type": "SOLID",
+            "width": "0.12 mm",
+            "color": "#5D5D5D"
+          },
+          "topBorder": {
+            "type": "SOLID",
+            "width": "0.12 mm",
+            "color": "#5D5D5D"
+          },
+          "bottomBorder": {
+            "type": "NONE",
+            "width": "0.12 mm",
+            "color": "#5D5D5D"
+          }
+        },
+        "28": {
+          "leftBorder": {
+            "type": "SOLID",
+            "width": "0.12 mm",
+            "color": "#5D5D5D"
+          },
+          "rightBorder": {
+            "type": "SOLID",
+            "width": "0.12 mm",
+            "color": "#5D5D5D"
+          },
+          "topBorder": {
+            "type": "NONE",
+            "width": "0.12 mm",
+            "color": "#5D5D5D"
+          },
+          "bottomBorder": {
+            "type": "NONE",
+            "width": "0.12 mm",
+            "color": "#5D5D5D"
+          }
+        },
+        "29": {
+          "leftBorder": {
+            "type": "SOLID",
+            "width": "0.12 mm",
+            "color": "#5D5D5D"
+          },
+          "rightBorder": {
+            "type": "SOLID",
+            "width": "0.12 mm",
+            "color": "#5D5D5D"
+          },
+          "topBorder": {
+            "type": "NONE",
+            "width": "0.12 mm",
+            "color": "#5D5D5D"
+          },
+          "bottomBorder": {
+            "type": "SOLID",
+            "width": "0.12 mm",
+            "color": "#5D5D5D"
+          }
+        }
+      },
+      "anchor_row": "|보기|",
+      "width_hwpunit": "24371",
+      "col_widths_hwpunit": [
+        "9655",
+        "5660",
+        "9056"
+      ],
+      "used_char_prs": {
+        "33": {
+          "height_hwpunit": "1000",
+          "textColor": "#4C4C4C",
+          "underline": true,
+          "fontRef_hangul": "5",
+          "fontName_hangul": "한컴바탕"
+        },
+        "38": {
+          "height_hwpunit": "1000",
+          "textColor": "#000000",
+          "underline": true,
+          "fontRef_hangul": "5",
+          "fontName_hangul": "한컴바탕"
+        },
+        "39": {
+          "height_hwpunit": "1000",
+          "textColor": "#000000",
+          "underline": true,
+          "fontRef_hangul": "5",
+          "fontName_hangul": "한컴바탕"
+        },
+        "50": {
+          "height_hwpunit": "1000",
+          "textColor": "#000000",
+          "underline": true,
+          "fontRef_hangul": "16",
+          "fontName_hangul": "나눔명조"
+        }
+      }
+    },
+    {
+      "table_index": 9,
+      "rows": 4,
+      "cols": 3,
+      "cells": [
+        {
+          "row": 0,
+          "col": 0,
+          "rowSpan": 1,
+          "colSpan": 1,
+          "width_hwpunit": "9655",
+          "height_hwpunit": "500",
+          "borderFillIDRef": "24",
+          "charPrIDRef": "39"
+        },
+        {
+          "row": 0,
+          "col": 1,
+          "rowSpan": 2,
+          "colSpan": 1,
+          "width_hwpunit": "5660",
+          "height_hwpunit": "1000",
+          "borderFillIDRef": "25",
+          "charPrIDRef": "38"
+        },
+        {
+          "row": 0,
+          "col": 2,
+          "rowSpan": 1,
+          "colSpan": 1,
+          "width_hwpunit": "9056",
+          "height_hwpunit": "500",
+          "borderFillIDRef": "24",
+          "charPrIDRef": "39"
+        },
+        {
+          "row": 1,
+          "col": 0,
+          "rowSpan": 1,
+          "colSpan": 1,
+          "width_hwpunit": "9655",
+          "height_hwpunit": "500",
+          "borderFillIDRef": "26",
+          "charPrIDRef": "39"
+        },
+        {
+          "row": 1,
+          "col": 2,
+          "rowSpan": 1,
+          "colSpan": 1,
+          "width_hwpunit": "9056",
+          "height_hwpunit": "500",
+          "borderFillIDRef": "27",
+          "charPrIDRef": "39"
+        },
+        {
+          "row": 2,
+          "col": 0,
+          "rowSpan": 1,
+          "colSpan": 3,
+          "width_hwpunit": "24371",
+          "height_hwpunit": "1000",
+          "borderFillIDRef": "28",
+          "charPrIDRef": "50"
+        },
+        {
+          "row": 3,
+          "col": 0,
+          "rowSpan": 1,
+          "colSpan": 3,
+          "width_hwpunit": "24371",
+          "height_hwpunit": "0",
+          "borderFillIDRef": "29",
+          "charPrIDRef": "33"
+        }
+      ],
+      "used_border_fills": {
+        "24": {
+          "leftBorder": {
+            "type": "NONE",
+            "width": "0.12 mm",
+            "color": "#5D5D5D"
+          },
+          "rightBorder": {
+            "type": "NONE",
+            "width": "0.12 mm",
+            "color": "#5D5D5D"
+          },
+          "topBorder": {
+            "type": "NONE",
+            "width": "0.12 mm",
+            "color": "#5D5D5D"
+          },
+          "bottomBorder": {
+            "type": "SOLID",
+            "width": "0.12 mm",
+            "color": "#5D5D5D"
+          }
+        },
+        "25": {
+          "leftBorder": {
+            "type": "NONE",
+            "width": "0.12 mm",
+            "color": "#5D5D5D"
+          },
+          "rightBorder": {
+            "type": "NONE",
+            "width": "0.12 mm",
+            "color": "#5D5D5D"
+          },
+          "topBorder": {
+            "type": "NONE",
+            "width": "0.12 mm",
+            "color": "#5D5D5D"
+          },
+          "bottomBorder": {
+            "type": "NONE",
+            "width": "0.12 mm",
+            "color": "#5D5D5D"
+          }
+        },
+        "26": {
+          "leftBorder": {
+            "type": "SOLID",
+            "width": "0.12 mm",
+            "color": "#5D5D5D"
+          },
+          "rightBorder": {
+            "type": "NONE",
+            "width": "0.12 mm",
+            "color": "#5D5D5D"
+          },
+          "topBorder": {
+            "type": "SOLID",
+            "width": "0.12 mm",
+            "color": "#5D5D5D"
+          },
+          "bottomBorder": {
+            "type": "NONE",
+            "width": "0.12 mm",
+            "color": "#5D5D5D"
+          }
+        },
+        "27": {
+          "leftBorder": {
+            "type": "NONE",
+            "width": "0.12 mm",
+            "color": "#5D5D5D"
+          },
+          "rightBorder": {
+            "type": "SOLID",
+            "width": "0.12 mm",
+            "color": "#5D5D5D"
+          },
+          "topBorder": {
+            "type": "SOLID",
+            "width": "0.12 mm",
+            "color": "#5D5D5D"
+          },
+          "bottomBorder": {
+            "type": "NONE",
+            "width": "0.12 mm",
+            "color": "#5D5D5D"
+          }
+        },
+        "28": {
+          "leftBorder": {
+            "type": "SOLID",
+            "width": "0.12 mm",
+            "color": "#5D5D5D"
+          },
+          "rightBorder": {
+            "type": "SOLID",
+            "width": "0.12 mm",
+            "color": "#5D5D5D"
+          },
+          "topBorder": {
+            "type": "NONE",
+            "width": "0.12 mm",
+            "color": "#5D5D5D"
+          },
+          "bottomBorder": {
+            "type": "NONE",
+            "width": "0.12 mm",
+            "color": "#5D5D5D"
+          }
+        },
+        "29": {
+          "leftBorder": {
+            "type": "SOLID",
+            "width": "0.12 mm",
+            "color": "#5D5D5D"
+          },
+          "rightBorder": {
+            "type": "SOLID",
+            "width": "0.12 mm",
+            "color": "#5D5D5D"
+          },
+          "topBorder": {
+            "type": "NONE",
+            "width": "0.12 mm",
+            "color": "#5D5D5D"
+          },
+          "bottomBorder": {
+            "type": "SOLID",
+            "width": "0.12 mm",
+            "color": "#5D5D5D"
+          }
+        }
+      },
+      "anchor_row": "|보기|",
+      "width_hwpunit": "24371",
+      "col_widths_hwpunit": [
+        "9655",
+        "5660",
+        "9056"
+      ],
+      "used_char_prs": {
+        "33": {
+          "height_hwpunit": "1000",
+          "textColor": "#4C4C4C",
+          "underline": true,
+          "fontRef_hangul": "5",
+          "fontName_hangul": "한컴바탕"
+        },
+        "38": {
+          "height_hwpunit": "1000",
+          "textColor": "#000000",
+          "underline": true,
+          "fontRef_hangul": "5",
+          "fontName_hangul": "한컴바탕"
+        },
+        "39": {
+          "height_hwpunit": "1000",
+          "textColor": "#000000",
+          "underline": true,
+          "fontRef_hangul": "5",
+          "fontName_hangul": "한컴바탕"
+        },
+        "50": {
+          "height_hwpunit": "1000",
+          "textColor": "#000000",
+          "underline": true,
+          "fontRef_hangul": "16",
+          "fontName_hangul": "나눔명조"
+        }
+      }
+    },
+    {
+      "table_index": 10,
+      "rows": 2,
+      "cols": 1,
+      "cells": [
+        {
+          "row": 0,
+          "col": 0,
+          "rowSpan": 1,
+          "colSpan": 1,
+          "width_hwpunit": "24560",
+          "height_hwpunit": "1548",
+          "borderFillIDRef": "20",
+          "charPrIDRef": "36"
+        },
+        {
+          "row": 1,
+          "col": 0,
+          "rowSpan": 1,
+          "colSpan": 1,
+          "width_hwpunit": "24560",
+          "height_hwpunit": "14652",
+          "borderFillIDRef": "19",
+          "charPrIDRef": "47"
+        }
+      ],
+      "used_border_fills": {
+        "19": {
+          "leftBorder": {
+            "type": "SOLID",
+            "width": "0.12 mm",
+            "color": "#000000"
+          },
+          "rightBorder": {
+            "type": "SOLID",
+            "width": "0.12 mm",
+            "color": "#000000"
+          },
+          "topBorder": {
+            "type": "SOLID",
+            "width": "0.12 mm",
+            "color": "#000000"
+          },
+          "bottomBorder": {
+            "type": "SOLID",
+            "width": "0.12 mm",
+            "color": "#000000"
+          }
+        },
+        "20": {
+          "leftBorder": {
+            "type": "NONE",
+            "width": "0.1 mm",
+            "color": "#000000"
+          },
+          "rightBorder": {
+            "type": "NONE",
+            "width": "0.1 mm",
+            "color": "#000000"
+          },
+          "topBorder": {
+            "type": "NONE",
+            "width": "0.1 mm",
+            "color": "#000000"
+          },
+          "bottomBorder": {
+            "type": "SOLID",
+            "width": "0.12 mm",
+            "color": "#000000"
+          }
+        }
+      },
+      "anchor_text": "서술형8다음글을읽고아래의물음에답하시오",
+      "anchor_row": "서술형8다음글을읽고아래의물음에답하시오",
+      "width_hwpunit": "24560",
+      "col_widths_hwpunit": [
+        "24560"
+      ],
+      "used_char_prs": {
+        "36": {
+          "height_hwpunit": "900",
+          "textColor": "#000000",
+          "underline": true,
+          "fontRef_hangul": "0",
+          "fontName_hangul": "굴림"
+        },
+        "47": {
+          "height_hwpunit": "1000",
+          "textColor": "#000000",
+          "underline": true,
+          "fontRef_hangul": "16",
+          "fontName_hangul": "나눔명조"
+        }
+      }
+    },
+    {
+      "table_index": 11,
+      "rows": 2,
+      "cols": 1,
+      "cells": [
+        {
+          "row": 0,
+          "col": 0,
+          "rowSpan": 1,
+          "colSpan": 1,
+          "width_hwpunit": "24560",
+          "height_hwpunit": "1548",
+          "borderFillIDRef": "20",
+          "charPrIDRef": "36"
+        },
+        {
+          "row": 1,
+          "col": 0,
+          "rowSpan": 1,
+          "colSpan": 1,
+          "width_hwpunit": "24560",
+          "height_hwpunit": "14652",
+          "borderFillIDRef": "19",
+          "charPrIDRef": "40"
+        }
+      ],
+      "used_border_fills": {
+        "19": {
+          "leftBorder": {
+            "type": "SOLID",
+            "width": "0.12 mm",
+            "color": "#000000"
+          },
+          "rightBorder": {
+            "type": "SOLID",
+            "width": "0.12 mm",
+            "color": "#000000"
+          },
+          "topBorder": {
+            "type": "SOLID",
+            "width": "0.12 mm",
+            "color": "#000000"
+          },
+          "bottomBorder": {
+            "type": "SOLID",
+            "width": "0.12 mm",
+            "color": "#000000"
+          }
+        },
+        "20": {
+          "leftBorder": {
+            "type": "NONE",
+            "width": "0.1 mm",
+            "color": "#000000"
+          },
+          "rightBorder": {
+            "type": "NONE",
+            "width": "0.1 mm",
+            "color": "#000000"
+          },
+          "topBorder": {
+            "type": "NONE",
+            "width": "0.1 mm",
+            "color": "#000000"
+          },
+          "bottomBorder": {
+            "type": "SOLID",
+            "width": "0.12 mm",
+            "color": "#000000"
+          }
+        }
+      },
+      "anchor_text": "서술형9다음글을읽고아래의물음에답하시오",
+      "anchor_row": "서술형9다음글을읽고아래의물음에답하시오",
+      "width_hwpunit": "24560",
+      "col_widths_hwpunit": [
+        "24560"
+      ],
+      "used_char_prs": {
+        "36": {
+          "height_hwpunit": "900",
+          "textColor": "#000000",
+          "underline": true,
+          "fontRef_hangul": "0",
+          "fontName_hangul": "굴림"
+        },
+        "40": {
+          "height_hwpunit": "1300",
+          "textColor": "#000000",
+          "underline": true,
+          "fontRef_hangul": "14",
+          "fontName_hangul": "LG Smart UI Bold"
+        }
+      }
+    },
+    {
+      "table_index": 12,
+      "rows": 1,
+      "cols": 1,
+      "cells": [
+        {
+          "row": 0,
+          "col": 0,
+          "rowSpan": 1,
+          "colSpan": 1,
+          "width_hwpunit": "23814",
+          "height_hwpunit": "282",
+          "borderFillIDRef": "19",
+          "charPrIDRef": "30"
+        }
+      ],
+      "used_border_fills": {
+        "19": {
+          "leftBorder": {
+            "type": "SOLID",
+            "width": "0.12 mm",
+            "color": "#000000"
+          },
+          "rightBorder": {
+            "type": "SOLID",
+            "width": "0.12 mm",
+            "color": "#000000"
+          },
+          "topBorder": {
+            "type": "SOLID",
+            "width": "0.12 mm",
+            "color": "#000000"
+          },
+          "bottomBorder": {
+            "type": "SOLID",
+            "width": "0.12 mm",
+            "color": "#000000"
+          }
+        }
+      },
+      "anchor_text": "확인사항답안지의해당란에필요한내용을정확히기입표",
+      "anchor_row": "확인사항답안지의해당란에필요한내용을정확히기입표",
+      "width_hwpunit": "23814",
+      "col_widths_hwpunit": [
+        "23814"
+      ],
+      "used_char_prs": {
+        "30": {
+          "height_hwpunit": "900",
+          "textColor": "#000000",
+          "underline": true,
+          "fontRef_hangul": "0",
+          "fontName_hangul": "굴림"
+        }
+      }
+    }
+  ]
+}

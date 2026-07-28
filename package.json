@@ -18,7 +18,8 @@
     "kordoc-mcp": "./dist/mcp.js"
   },
   "files": [
-    "dist"
+    "dist",
+    "templates/assessment"
   ],
   "scripts": {
     "build": "tsup",

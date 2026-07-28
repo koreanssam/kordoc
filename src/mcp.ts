@@ -6,7 +6,7 @@ import { z } from "zod"
 import { readFileSync, writeFileSync, realpathSync, openSync, readSync, closeSync, statSync, mkdirSync, existsSync } from "fs"
 import { pathToFileURL } from "url"
 import { resolve, isAbsolute, extname, dirname, basename } from "path"
-import { parse, detectFormat, detectZipFormat, blocksToMarkdown, compare, extractFormFields, fillFormFields, markdownToHwpx, fillHwpx, patchHwpx, patchHwp, unknownFontWarnings, incompatibleGongmunWarnings, gongmunLintWarnings, PRESET_ALIAS } from "./index.js"
+import { parse, detectFormat, detectZipFormat, blocksToMarkdown, compare, extractFormFields, fillFormFields, markdownToHwpx, fillHwpx, patchHwpx, patchHwp, unknownFontWarnings, incompatibleGongmunWarnings, gongmunLintWarnings, PRESET_ALIAS, isAssessmentPreset } from "./index.js"
 import { fillWithUniqueGuard, type FillInput } from "./form/match.js"
 import type { GongmunOptions } from "./index.js"
 import {
@@ -960,14 +960,14 @@ server.tool(
 
 server.tool(
   "generate_document",
-  "마크다운을 HWPX 한글 문서로 생성합니다. \"보고서로/공문서로/개조식으로/계획서로 뽑아줘·만들어줘\" 요청이 이 도구입니다. 프리셋 매핑: 정부 표준 보고서(표지·목차·로마숫자 장헤더 자동)='개조식', 기안문·시행문·알림공문='기안문', 1페이지 요약보고서='보고서', 추진계획='계획서'. 표는 실측 정부 서식(헤더 음영+이중선·외곽 굵은선·내용 비례 열폭), 쪽번호·결재란·'끝.' 표시 지원. ⚠ 생성 전 확인 권장: 문서종류(보고서/기안문)·제목·기관명(org)·날짜·목차 여부가 불명확하면 사용자에게 물어보세요 — 엉뚱한 프리셋 선택이 가장 흔한 오생성 원인. 마크다운 규칙: #(h1)=문서 제목(표지), ##(h2)=장(Ⅰ Ⅱ Ⅲ 자동), 리스트 깊이=□ ○ - ㆍ 부호, ※시작 문단=참고 스타일, <right>텍스트</right>=우측정렬 출처행. (원본 서식 보존 제자리 수정은 patch_document, 서식 빈칸 채우기는 fill_form)",
+  "마크다운을 HWPX 한글 문서로 생성합니다. 보고서·공문·계획서뿐 아니라 학교 정기시험 고사원안과 서술형 문항 채점기준표를 생성합니다. 평가 프리셋: preset='고사원안'은 실물 2단 시험지 템플릿을 사용하며 ##=본문 묶음, #=서술형 문항, :::보기…:::=보기 상자입니다. preset='서술형문항채점기준표'는 YAML frontmatter와 4열 GFM 표를 실물 채점표 서식으로 변환합니다. 일반 프리셋: 정부 표준 보고서='개조식', 기안문·시행문='기안문', 1페이지 요약='보고서', 추진계획='계획서'. (원본 서식 보존 제자리 수정은 patch_document, 서식 빈칸 채우기는 fill_form)",
   {
     markdown: z.string().min(1).describe("HWPX로 변환할 마크다운 전문. 표는 GFM 문법 사용 (예: '| 이름 | 부서 |\\n| --- | --- |\\n| 홍길동 | 기획팀 |')"),
     output_path: z.string().min(1).describe("출력 HWPX 파일의 절대 경로 (.hwpx 권장)"),
     profile_path: z.string().optional().describe("서식 프로필 JSON 경로 (extract_profile로 추출) — 참조 문서의 표 테두리·음영·열폭·셀 글꼴을 재현. 표 행·열 수와 첫 셀 텍스트가 일치하는 표에만 적용"),
     // 값 집합·범위는 gongmun-surface SSOT에서 파생 (CLI와 드리프트 불가 — v4.0.4 영역1-1)
     preset: z.enum(Object.keys(PRESET_ALIAS) as [string, ...string[]]).optional()
-      .describe("공문서 프리셋 — 지정 시 한국 행정 공문서 표준 서식 적용. '개조식'=정부 표준 개조식 보고서(표지·목차·로마숫자 장 헤더 자동 + □○-※ 부호별 폰트), '보도자료'=머리박스+제목 25pt+□→ㅇ→*(각주) 체계. 미지정 시 범용 마크다운 변환"),
+      .describe("문서 프리셋 — '고사원안'=실물 2단 시험지(본문·문항·보기별 원본 글꼴/자간), '서술형문항채점기준표'=결재란+동적 채점표, '개조식'=정부 표준 보고서, '보도자료'=머리박스+제목 25pt. 미지정 시 범용 마크다운 변환"),
     font: z.enum(BODY_FONTS).optional().describe("본문 글꼴(공문서 모드): myeongjo=명조 계열(개조식·보고서·계획서는 실측 휴먼명조, 그 외 함초롬바탕), gothic=맑은 고딕"),
     body_pt: z.number().int().min(BODY_PT_RANGE.min).max(BODY_PT_RANGE.max).optional().describe("본문 글자 크기(pt, 공문서 모드). 기본: 기안문 12, 보고서·계획서·통지 15"),
     line_spacing: z.number().int().min(LINE_SPACING_RANGE.min).max(LINE_SPACING_RANGE.max).optional().describe("본문 줄간격(%, 공문서 모드). 기본: 프리셋별 실측값(기안문 160, 회의록 130 등)"),
@@ -1024,14 +1024,16 @@ server.tool(
       mkdirSync(dirname(out), { recursive: true })
       writeFileSync(out, Buffer.from(buf))
 
-      const mode = gongmun ? `공문서:${gongmun.preset}` : "범용"
+      const mode = gongmun
+        ? `${isAssessmentPreset(String(gongmun.preset)) ? "평가문서" : "공문서"}:${gongmun.preset}`
+        : "범용"
       const tableCount = (markdown.match(/^\s*\|.*\|\s*$/gm) || []).length > 0
         ? `, 표 포함` : ""
       // 폰트 오버라이드 오타·미설치 경고 (A2) — 생성은 진행, 경고만 병기.
       // 프리셋 비호환 옵션(조용한 폐기)·편람 표기법 검수도 같은 채널로 병기
       const fontWarns = gongmun?.fonts ? unknownFontWarnings(gongmun.fonts) : []
       if (gongmun) fontWarns.push(...incompatibleGongmunWarnings(gongmun))
-      if (gongmun) fontWarns.push(...gongmunLintWarnings(markdown, 5))
+      if (gongmun && !isAssessmentPreset(String(gongmun.preset))) fontWarns.push(...gongmunLintWarnings(markdown, 5))
       const warnText = fontWarns.length ? `\n⚠ ${fontWarns.join("\n⚠ ")}` : ""
       return {
         content: [{ type: "text", text: `✓ HWPX 생성 (${mode}${tableCount}) → ${out}\n크기: ${(buf.byteLength / 1024).toFixed(1)}KB${warnText}` }],

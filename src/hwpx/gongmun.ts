@@ -15,7 +15,9 @@ import { KordocError } from "../utils.js"
 
 // ─── 옵션 타입 ──────────────────────────────────────
 
-export type GongmunPreset = "official" | "report" | "plan" | "notice" | "minutes" | "gaejosik" | "press"
+export type GongmunPreset =
+  | "official" | "report" | "plan" | "notice" | "minutes" | "gaejosik" | "press"
+  | "exam" | "rubric"
 export type GongmunNumbering = "standard" | "report" | "gaejosik"
 export type GongmunFont = "myeongjo" | "gothic"
 
@@ -29,6 +31,8 @@ export type GongmunPresetInput =
   | "회의록"
   | "개조식" | "개조식보고서" | "정부보고서" | "정부표준개조식보고서"
   | "보도자료"
+  | "고사원안" | "시험원안" | "평가원안"
+  | "서술형채점기준표" | "서술형문항채점기준표" | "채점기준표"
 
 /** 공문서 모드 옵션 (전부 선택 — 프리셋 기본값을 개별 override) */
 export interface GongmunOptions {
@@ -182,6 +186,9 @@ const PRESET_DEFAULTS: Record<
   gaejosik: { bodyPt: 15, lineSpacing: 160, numbering: "gaejosik" },
   // 보도자료 — 실측(국토부 실물): 본문 바탕 14pt 160%, □→ㅇ→*(각주) 부호
   press: { bodyPt: 14, lineSpacing: 160, numbering: "report" },
+  // 학교 평가 문서는 실물 HWPX 템플릿 기반 전용 생성기로 분기한다.
+  exam: { bodyPt: 11, lineSpacing: 160, numbering: "standard" },
+  rubric: { bodyPt: 9, lineSpacing: 130, numbering: "standard" },
 }
 
 /** 프리셋 별칭(한글/영문) → 내부 preset 키. CLI·라이브러리 공용 */
@@ -193,6 +200,9 @@ export const PRESET_ALIAS: Record<string, GongmunPreset> = {
   minutes: "minutes", 회의록: "minutes",
   gaejosik: "gaejosik", 개조식: "gaejosik", 개조식보고서: "gaejosik", 정부보고서: "gaejosik", 정부표준개조식보고서: "gaejosik",
   press: "press", 보도자료: "press",
+  exam: "exam", "assessment-exam": "exam", 고사원안: "exam", 시험원안: "exam", 평가원안: "exam",
+  rubric: "rubric", "assessment-rubric": "rubric",
+  서술형채점기준표: "rubric", 서술형문항채점기준표: "rubric", 채점기준표: "rubric",
 }
 
 /** 프리셋 입력(영문 키 또는 한글 별칭)을 내부 GongmunPreset로 정규화. 미상은 'official' */

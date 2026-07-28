@@ -1,0 +1,1256 @@
+{
+  "schema_version": "0.3.0",
+  "tables": [
+    {
+      "table_index": 0,
+      "rows": 4,
+      "cols": 6,
+      "cells": [
+        {
+          "row": 0,
+          "col": 0,
+          "rowSpan": 2,
+          "colSpan": 1,
+          "width_hwpunit": "28382",
+          "height_hwpunit": "1225",
+          "borderFillIDRef": "6",
+          "charPrIDRef": "10"
+        },
+        {
+          "row": 0,
+          "col": 1,
+          "rowSpan": 4,
+          "colSpan": 1,
+          "width_hwpunit": "3274",
+          "height_hwpunit": "4241",
+          "borderFillIDRef": "8",
+          "charPrIDRef": "10"
+        },
+        {
+          "row": 0,
+          "col": 2,
+          "rowSpan": 1,
+          "colSpan": 1,
+          "width_hwpunit": "5303",
+          "height_hwpunit": "1181",
+          "borderFillIDRef": "9",
+          "charPrIDRef": "10"
+        },
+        {
+          "row": 0,
+          "col": 3,
+          "rowSpan": 1,
+          "colSpan": 1,
+          "width_hwpunit": "5303",
+          "height_hwpunit": "1181",
+          "borderFillIDRef": "3",
+          "charPrIDRef": "10"
+        },
+        {
+          "row": 0,
+          "col": 4,
+          "rowSpan": 1,
+          "colSpan": 1,
+          "width_hwpunit": "5303",
+          "height_hwpunit": "1181",
+          "borderFillIDRef": "3",
+          "charPrIDRef": "10"
+        },
+        {
+          "row": 0,
+          "col": 5,
+          "rowSpan": 1,
+          "colSpan": 1,
+          "width_hwpunit": "5299",
+          "height_hwpunit": "1181",
+          "borderFillIDRef": "10",
+          "charPrIDRef": "10"
+        },
+        {
+          "row": 1,
+          "col": 2,
+          "rowSpan": 3,
+          "colSpan": 1,
+          "width_hwpunit": "5303",
+          "height_hwpunit": "3060",
+          "borderFillIDRef": "11",
+          "charPrIDRef": "10"
+        },
+        {
+          "row": 1,
+          "col": 3,
+          "rowSpan": 3,
+          "colSpan": 1,
+          "width_hwpunit": "5303",
+          "height_hwpunit": "3060",
+          "borderFillIDRef": "12",
+          "charPrIDRef": "10"
+        },
+        {
+          "row": 1,
+          "col": 4,
+          "rowSpan": 3,
+          "colSpan": 1,
+          "width_hwpunit": "5303",
+          "height_hwpunit": "3060",
+          "borderFillIDRef": "12",
+          "charPrIDRef": "10"
+        },
+        {
+          "row": 1,
+          "col": 5,
+          "rowSpan": 3,
+          "colSpan": 1,
+          "width_hwpunit": "5299",
+          "height_hwpunit": "3060",
+          "borderFillIDRef": "13",
+          "charPrIDRef": "10"
+        },
+        {
+          "row": 2,
+          "col": 0,
+          "rowSpan": 1,
+          "colSpan": 1,
+          "width_hwpunit": "28382",
+          "height_hwpunit": "1508",
+          "borderFillIDRef": "14",
+          "charPrIDRef": "10"
+        },
+        {
+          "row": 3,
+          "col": 0,
+          "rowSpan": 1,
+          "colSpan": 1,
+          "width_hwpunit": "28382",
+          "height_hwpunit": "1508",
+          "borderFillIDRef": "5",
+          "charPrIDRef": "10"
+        }
+      ],
+      "used_border_fills": {
+        "3": {
+          "leftBorder": {
+            "type": "SOLID",
+            "width": "0.12 mm",
+            "color": "#000000"
+          },
+          "rightBorder": {
+            "type": "NONE",
+            "width": "0.1 mm",
+            "color": "#000000"
+          },
+          "topBorder": {
+            "type": "SOLID",
+            "width": "0.4 mm",
+            "color": "#000000"
+          },
+          "bottomBorder": {
+            "type": "NONE",
+            "width": "0.1 mm",
+            "color": "#000000"
+          }
+        },
+        "5": {
+          "leftBorder": {
+            "type": "SOLID",
+            "width": "0.4 mm",
+            "color": "#000000"
+          },
+          "rightBorder": {
+            "type": "DOUBLE_SLIM",
+            "width": "0.5 mm",
+            "color": "#000000"
+          },
+          "topBorder": {
+            "type": "SOLID",
+            "width": "0.12 mm",
+            "color": "#000000"
+          },
+          "bottomBorder": {
+            "type": "SOLID",
+            "width": "0.4 mm",
+            "color": "#000000"
+          }
+        },
+        "6": {
+          "leftBorder": {
+            "type": "SOLID",
+            "width": "0.4 mm",
+            "color": "#000000"
+          },
+          "rightBorder": {
+            "type": "DOUBLE_SLIM",
+            "width": "0.5 mm",
+            "color": "#000000"
+          },
+          "topBorder": {
+            "type": "SOLID",
+            "width": "0.4 mm",
+            "color": "#000000"
+          },
+          "bottomBorder": {
+            "type": "SOLID",
+            "width": "0.12 mm",
+            "color": "#000000"
+          }
+        },
+        "8": {
+          "leftBorder": {
+            "type": "DOUBLE_SLIM",
+            "width": "0.5 mm",
+            "color": "#000000"
+          },
+          "rightBorder": {
+            "type": "SOLID",
+            "width": "0.1 mm",
+            "color": "#000000"
+          },
+          "topBorder": {
+            "type": "SOLID",
+            "width": "0.4 mm",
+            "color": "#000000"
+          },
+          "bottomBorder": {
+            "type": "SOLID",
+            "width": "0.4 mm",
+            "color": "#000000"
+          }
+        },
+        "9": {
+          "leftBorder": {
+            "type": "SOLID",
+            "width": "0.1 mm",
+            "color": "#000000"
+          },
+          "rightBorder": {
+            "type": "NONE",
+            "width": "0.1 mm",
+            "color": "#000000"
+          },
+          "topBorder": {
+            "type": "SOLID",
+            "width": "0.4 mm",
+            "color": "#000000"
+          },
+          "bottomBorder": {
+            "type": "NONE",
+            "width": "0.1 mm",
+            "color": "#000000"
+          }
+        },
+        "10": {
+          "leftBorder": {
+            "type": "SOLID",
+            "width": "0.12 mm",
+            "color": "#000000"
+          },
+          "rightBorder": {
+            "type": "SOLID",
+            "width": "0.4 mm",
+            "color": "#000000"
+          },
+          "topBorder": {
+            "type": "SOLID",
+            "width": "0.4 mm",
+            "color": "#000000"
+          },
+          "bottomBorder": {
+            "type": "NONE",
+            "width": "0.1 mm",
+            "color": "#000000"
+          }
+        },
+        "11": {
+          "leftBorder": {
+            "type": "SOLID",
+            "width": "0.1 mm",
+            "color": "#000000"
+          },
+          "rightBorder": {
+            "type": "NONE",
+            "width": "0.1 mm",
+            "color": "#000000"
+          },
+          "topBorder": {
+            "type": "DOUBLE_SLIM",
+            "width": "0.5 mm",
+            "color": "#000000"
+          },
+          "bottomBorder": {
+            "type": "SOLID",
+            "width": "0.4 mm",
+            "color": "#000000"
+          }
+        },
+        "12": {
+          "leftBorder": {
+            "type": "SOLID",
+            "width": "0.12 mm",
+            "color": "#000000"
+          },
+          "rightBorder": {
+            "type": "NONE",
+            "width": "0.1 mm",
+            "color": "#000000"
+          },
+          "topBorder": {
+            "type": "DOUBLE_SLIM",
+            "width": "0.5 mm",
+            "color": "#000000"
+          },
+          "bottomBorder": {
+            "type": "SOLID",
+            "width": "0.4 mm",
+            "color": "#000000"
+          }
+        },
+        "13": {
+          "leftBorder": {
+            "type": "SOLID",
+            "width": "0.12 mm",
+            "color": "#000000"
+          },
+          "rightBorder": {
+            "type": "SOLID",
+            "width": "0.4 mm",
+            "color": "#000000"
+          },
+          "topBorder": {
+            "type": "DOUBLE_SLIM",
+            "width": "0.5 mm",
+            "color": "#000000"
+          },
+          "bottomBorder": {
+            "type": "SOLID",
+            "width": "0.4 mm",
+            "color": "#000000"
+          }
+        },
+        "14": {
+          "leftBorder": {
+            "type": "SOLID",
+            "width": "0.4 mm",
+            "color": "#000000"
+          },
+          "rightBorder": {
+            "type": "DOUBLE_SLIM",
+            "width": "0.5 mm",
+            "color": "#000000"
+          },
+          "topBorder": {
+            "type": "SOLID",
+            "width": "0.12 mm",
+            "color": "#000000"
+          },
+          "bottomBorder": {
+            "type": "SOLID",
+            "width": "0.12 mm",
+            "color": "#000000"
+          }
+        }
+      },
+      "anchor_text": "관련평가2026학년도1학기1차시험",
+      "anchor_row": "관련평가2026학년도1학기1차시험|결재|계|부장|교감|교장",
+      "width_hwpunit": "52864",
+      "col_widths_hwpunit": [
+        "28382",
+        "3274",
+        "5303",
+        "5303",
+        "5303",
+        "5299"
+      ],
+      "used_char_prs": {
+        "10": {
+          "height_hwpunit": "1000",
+          "textColor": "#000000",
+          "underline": true,
+          "fontRef_hangul": "0",
+          "fontName_hangul": "굴림"
+        }
+      }
+    },
+    {
+      "table_index": 1,
+      "rows": 20,
+      "cols": 4,
+      "cells": [
+        {
+          "row": 0,
+          "col": 0,
+          "rowSpan": 1,
+          "colSpan": 1,
+          "width_hwpunit": "3097",
+          "height_hwpunit": "2031",
+          "borderFillIDRef": "15",
+          "charPrIDRef": "11"
+        },
+        {
+          "row": 0,
+          "col": 1,
+          "rowSpan": 1,
+          "colSpan": 1,
+          "width_hwpunit": "28566",
+          "height_hwpunit": "2031",
+          "borderFillIDRef": "15",
+          "charPrIDRef": "11"
+        },
+        {
+          "row": 0,
+          "col": 2,
+          "rowSpan": 1,
+          "colSpan": 1,
+          "width_hwpunit": "18568",
+          "height_hwpunit": "2031",
+          "borderFillIDRef": "15",
+          "charPrIDRef": "11"
+        },
+        {
+          "row": 0,
+          "col": 3,
+          "rowSpan": 1,
+          "colSpan": 1,
+          "width_hwpunit": "3043",
+          "height_hwpunit": "2031",
+          "borderFillIDRef": "15",
+          "charPrIDRef": "11"
+        },
+        {
+          "row": 1,
+          "col": 0,
+          "rowSpan": 1,
+          "colSpan": 1,
+          "width_hwpunit": "3097",
+          "height_hwpunit": "2414",
+          "borderFillIDRef": "2",
+          "charPrIDRef": "15"
+        },
+        {
+          "row": 1,
+          "col": 1,
+          "rowSpan": 1,
+          "colSpan": 1,
+          "width_hwpunit": "28566",
+          "height_hwpunit": "2414",
+          "borderFillIDRef": "2",
+          "charPrIDRef": "12"
+        },
+        {
+          "row": 1,
+          "col": 2,
+          "rowSpan": 1,
+          "colSpan": 1,
+          "width_hwpunit": "18568",
+          "height_hwpunit": "2414",
+          "borderFillIDRef": "2",
+          "charPrIDRef": "16"
+        },
+        {
+          "row": 1,
+          "col": 3,
+          "rowSpan": 1,
+          "colSpan": 1,
+          "width_hwpunit": "3043",
+          "height_hwpunit": "2414",
+          "borderFillIDRef": "2",
+          "charPrIDRef": "11"
+        },
+        {
+          "row": 2,
+          "col": 0,
+          "rowSpan": 1,
+          "colSpan": 1,
+          "width_hwpunit": "3097",
+          "height_hwpunit": "3571",
+          "borderFillIDRef": "2",
+          "charPrIDRef": "15"
+        },
+        {
+          "row": 2,
+          "col": 1,
+          "rowSpan": 1,
+          "colSpan": 1,
+          "width_hwpunit": "28566",
+          "height_hwpunit": "3571",
+          "borderFillIDRef": "2",
+          "charPrIDRef": "12"
+        },
+        {
+          "row": 2,
+          "col": 2,
+          "rowSpan": 1,
+          "colSpan": 1,
+          "width_hwpunit": "18568",
+          "height_hwpunit": "3571",
+          "borderFillIDRef": "2",
+          "charPrIDRef": "16"
+        },
+        {
+          "row": 2,
+          "col": 3,
+          "rowSpan": 1,
+          "colSpan": 1,
+          "width_hwpunit": "3043",
+          "height_hwpunit": "3571",
+          "borderFillIDRef": "2",
+          "charPrIDRef": "11"
+        },
+        {
+          "row": 3,
+          "col": 0,
+          "rowSpan": 1,
+          "colSpan": 1,
+          "width_hwpunit": "3097",
+          "height_hwpunit": "6261",
+          "borderFillIDRef": "2",
+          "charPrIDRef": "15"
+        },
+        {
+          "row": 3,
+          "col": 1,
+          "rowSpan": 1,
+          "colSpan": 1,
+          "width_hwpunit": "28566",
+          "height_hwpunit": "6261",
+          "borderFillIDRef": "2",
+          "charPrIDRef": "12"
+        },
+        {
+          "row": 3,
+          "col": 2,
+          "rowSpan": 1,
+          "colSpan": 1,
+          "width_hwpunit": "18568",
+          "height_hwpunit": "6261",
+          "borderFillIDRef": "2",
+          "charPrIDRef": "16"
+        },
+        {
+          "row": 3,
+          "col": 3,
+          "rowSpan": 1,
+          "colSpan": 1,
+          "width_hwpunit": "3043",
+          "height_hwpunit": "6261",
+          "borderFillIDRef": "2",
+          "charPrIDRef": "11"
+        },
+        {
+          "row": 4,
+          "col": 0,
+          "rowSpan": 1,
+          "colSpan": 1,
+          "width_hwpunit": "3097",
+          "height_hwpunit": "3471",
+          "borderFillIDRef": "2",
+          "charPrIDRef": "15"
+        },
+        {
+          "row": 4,
+          "col": 1,
+          "rowSpan": 1,
+          "colSpan": 1,
+          "width_hwpunit": "28566",
+          "height_hwpunit": "3471",
+          "borderFillIDRef": "2",
+          "charPrIDRef": "12"
+        },
+        {
+          "row": 4,
+          "col": 2,
+          "rowSpan": 1,
+          "colSpan": 1,
+          "width_hwpunit": "18568",
+          "height_hwpunit": "3471",
+          "borderFillIDRef": "2",
+          "charPrIDRef": "16"
+        },
+        {
+          "row": 4,
+          "col": 3,
+          "rowSpan": 1,
+          "colSpan": 1,
+          "width_hwpunit": "3043",
+          "height_hwpunit": "3471",
+          "borderFillIDRef": "2",
+          "charPrIDRef": "11"
+        },
+        {
+          "row": 5,
+          "col": 0,
+          "rowSpan": 1,
+          "colSpan": 1,
+          "width_hwpunit": "3097",
+          "height_hwpunit": "3471",
+          "borderFillIDRef": "2",
+          "charPrIDRef": "15"
+        },
+        {
+          "row": 5,
+          "col": 1,
+          "rowSpan": 1,
+          "colSpan": 1,
+          "width_hwpunit": "28566",
+          "height_hwpunit": "3471",
+          "borderFillIDRef": "2",
+          "charPrIDRef": "12"
+        },
+        {
+          "row": 5,
+          "col": 2,
+          "rowSpan": 1,
+          "colSpan": 1,
+          "width_hwpunit": "18568",
+          "height_hwpunit": "3471",
+          "borderFillIDRef": "2",
+          "charPrIDRef": "16"
+        },
+        {
+          "row": 5,
+          "col": 3,
+          "rowSpan": 1,
+          "colSpan": 1,
+          "width_hwpunit": "3043",
+          "height_hwpunit": "3471",
+          "borderFillIDRef": "2",
+          "charPrIDRef": "11"
+        },
+        {
+          "row": 6,
+          "col": 0,
+          "rowSpan": 1,
+          "colSpan": 1,
+          "width_hwpunit": "3097",
+          "height_hwpunit": "3471",
+          "borderFillIDRef": "2",
+          "charPrIDRef": "15"
+        },
+        {
+          "row": 6,
+          "col": 1,
+          "rowSpan": 1,
+          "colSpan": 1,
+          "width_hwpunit": "28566",
+          "height_hwpunit": "3471",
+          "borderFillIDRef": "2",
+          "charPrIDRef": "12"
+        },
+        {
+          "row": 6,
+          "col": 2,
+          "rowSpan": 1,
+          "colSpan": 1,
+          "width_hwpunit": "18568",
+          "height_hwpunit": "3471",
+          "borderFillIDRef": "2",
+          "charPrIDRef": "16"
+        },
+        {
+          "row": 6,
+          "col": 3,
+          "rowSpan": 1,
+          "colSpan": 1,
+          "width_hwpunit": "3043",
+          "height_hwpunit": "3471",
+          "borderFillIDRef": "2",
+          "charPrIDRef": "11"
+        },
+        {
+          "row": 7,
+          "col": 0,
+          "rowSpan": 1,
+          "colSpan": 1,
+          "width_hwpunit": "3097",
+          "height_hwpunit": "4911",
+          "borderFillIDRef": "2",
+          "charPrIDRef": "15"
+        },
+        {
+          "row": 7,
+          "col": 1,
+          "rowSpan": 1,
+          "colSpan": 1,
+          "width_hwpunit": "28566",
+          "height_hwpunit": "4911",
+          "borderFillIDRef": "2",
+          "charPrIDRef": "12"
+        },
+        {
+          "row": 7,
+          "col": 2,
+          "rowSpan": 1,
+          "colSpan": 1,
+          "width_hwpunit": "18568",
+          "height_hwpunit": "4911",
+          "borderFillIDRef": "2",
+          "charPrIDRef": "16"
+        },
+        {
+          "row": 7,
+          "col": 3,
+          "rowSpan": 1,
+          "colSpan": 1,
+          "width_hwpunit": "3043",
+          "height_hwpunit": "4911",
+          "borderFillIDRef": "2",
+          "charPrIDRef": "11"
+        },
+        {
+          "row": 8,
+          "col": 0,
+          "rowSpan": 1,
+          "colSpan": 1,
+          "width_hwpunit": "3097",
+          "height_hwpunit": "7766",
+          "borderFillIDRef": "2",
+          "charPrIDRef": "15"
+        },
+        {
+          "row": 8,
+          "col": 1,
+          "rowSpan": 1,
+          "colSpan": 1,
+          "width_hwpunit": "28566",
+          "height_hwpunit": "7766",
+          "borderFillIDRef": "2",
+          "charPrIDRef": "14"
+        },
+        {
+          "row": 8,
+          "col": 2,
+          "rowSpan": 1,
+          "colSpan": 1,
+          "width_hwpunit": "18568",
+          "height_hwpunit": "7766",
+          "borderFillIDRef": "2",
+          "charPrIDRef": "16"
+        },
+        {
+          "row": 8,
+          "col": 3,
+          "rowSpan": 1,
+          "colSpan": 1,
+          "width_hwpunit": "3043",
+          "height_hwpunit": "7766",
+          "borderFillIDRef": "2",
+          "charPrIDRef": "11"
+        },
+        {
+          "row": 9,
+          "col": 0,
+          "rowSpan": 1,
+          "colSpan": 1,
+          "width_hwpunit": "3097",
+          "height_hwpunit": "5477",
+          "borderFillIDRef": "2",
+          "charPrIDRef": "15"
+        },
+        {
+          "row": 9,
+          "col": 1,
+          "rowSpan": 1,
+          "colSpan": 1,
+          "width_hwpunit": "28566",
+          "height_hwpunit": "5477",
+          "borderFillIDRef": "2",
+          "charPrIDRef": "12"
+        },
+        {
+          "row": 9,
+          "col": 2,
+          "rowSpan": 1,
+          "colSpan": 1,
+          "width_hwpunit": "18568",
+          "height_hwpunit": "5477",
+          "borderFillIDRef": "2",
+          "charPrIDRef": "16"
+        },
+        {
+          "row": 9,
+          "col": 3,
+          "rowSpan": 1,
+          "colSpan": 1,
+          "width_hwpunit": "3043",
+          "height_hwpunit": "5477",
+          "borderFillIDRef": "2",
+          "charPrIDRef": "11"
+        },
+        {
+          "row": 10,
+          "col": 0,
+          "rowSpan": 1,
+          "colSpan": 1,
+          "width_hwpunit": "3097",
+          "height_hwpunit": "15557",
+          "borderFillIDRef": "2",
+          "charPrIDRef": "15"
+        },
+        {
+          "row": 10,
+          "col": 1,
+          "rowSpan": 1,
+          "colSpan": 1,
+          "width_hwpunit": "28566",
+          "height_hwpunit": "15557",
+          "borderFillIDRef": "2",
+          "charPrIDRef": "12"
+        },
+        {
+          "row": 10,
+          "col": 2,
+          "rowSpan": 1,
+          "colSpan": 1,
+          "width_hwpunit": "18568",
+          "height_hwpunit": "15557",
+          "borderFillIDRef": "2",
+          "charPrIDRef": "16"
+        },
+        {
+          "row": 10,
+          "col": 3,
+          "rowSpan": 1,
+          "colSpan": 1,
+          "width_hwpunit": "3043",
+          "height_hwpunit": "15557",
+          "borderFillIDRef": "2",
+          "charPrIDRef": "11"
+        },
+        {
+          "row": 11,
+          "col": 0,
+          "rowSpan": 1,
+          "colSpan": 1,
+          "width_hwpunit": "3097",
+          "height_hwpunit": "16977",
+          "borderFillIDRef": "2",
+          "charPrIDRef": "15"
+        },
+        {
+          "row": 11,
+          "col": 1,
+          "rowSpan": 1,
+          "colSpan": 1,
+          "width_hwpunit": "28566",
+          "height_hwpunit": "16977",
+          "borderFillIDRef": "2",
+          "charPrIDRef": "12"
+        },
+        {
+          "row": 11,
+          "col": 2,
+          "rowSpan": 1,
+          "colSpan": 1,
+          "width_hwpunit": "18568",
+          "height_hwpunit": "16977",
+          "borderFillIDRef": "2",
+          "charPrIDRef": "16"
+        },
+        {
+          "row": 11,
+          "col": 3,
+          "rowSpan": 1,
+          "colSpan": 1,
+          "width_hwpunit": "3043",
+          "height_hwpunit": "16977",
+          "borderFillIDRef": "2",
+          "charPrIDRef": "11"
+        },
+        {
+          "row": 12,
+          "col": 0,
+          "rowSpan": 1,
+          "colSpan": 1,
+          "width_hwpunit": "3097",
+          "height_hwpunit": "3471",
+          "borderFillIDRef": "2",
+          "charPrIDRef": "15"
+        },
+        {
+          "row": 12,
+          "col": 1,
+          "rowSpan": 1,
+          "colSpan": 1,
+          "width_hwpunit": "28566",
+          "height_hwpunit": "3471",
+          "borderFillIDRef": "2",
+          "charPrIDRef": "12"
+        },
+        {
+          "row": 12,
+          "col": 2,
+          "rowSpan": 1,
+          "colSpan": 1,
+          "width_hwpunit": "18568",
+          "height_hwpunit": "3471",
+          "borderFillIDRef": "2",
+          "charPrIDRef": "16"
+        },
+        {
+          "row": 12,
+          "col": 3,
+          "rowSpan": 1,
+          "colSpan": 1,
+          "width_hwpunit": "3043",
+          "height_hwpunit": "3471",
+          "borderFillIDRef": "2",
+          "charPrIDRef": "11"
+        },
+        {
+          "row": 13,
+          "col": 0,
+          "rowSpan": 1,
+          "colSpan": 1,
+          "width_hwpunit": "3097",
+          "height_hwpunit": "4628",
+          "borderFillIDRef": "2",
+          "charPrIDRef": "15"
+        },
+        {
+          "row": 13,
+          "col": 1,
+          "rowSpan": 1,
+          "colSpan": 1,
+          "width_hwpunit": "28566",
+          "height_hwpunit": "4628",
+          "borderFillIDRef": "2",
+          "charPrIDRef": "12"
+        },
+        {
+          "row": 13,
+          "col": 2,
+          "rowSpan": 1,
+          "colSpan": 1,
+          "width_hwpunit": "18568",
+          "height_hwpunit": "4628",
+          "borderFillIDRef": "2",
+          "charPrIDRef": "16"
+        },
+        {
+          "row": 13,
+          "col": 3,
+          "rowSpan": 1,
+          "colSpan": 1,
+          "width_hwpunit": "3043",
+          "height_hwpunit": "4628",
+          "borderFillIDRef": "2",
+          "charPrIDRef": "11"
+        },
+        {
+          "row": 14,
+          "col": 0,
+          "rowSpan": 1,
+          "colSpan": 1,
+          "width_hwpunit": "3097",
+          "height_hwpunit": "4037",
+          "borderFillIDRef": "2",
+          "charPrIDRef": "15"
+        },
+        {
+          "row": 14,
+          "col": 1,
+          "rowSpan": 1,
+          "colSpan": 1,
+          "width_hwpunit": "28566",
+          "height_hwpunit": "4037",
+          "borderFillIDRef": "2",
+          "charPrIDRef": "12"
+        },
+        {
+          "row": 14,
+          "col": 2,
+          "rowSpan": 1,
+          "colSpan": 1,
+          "width_hwpunit": "18568",
+          "height_hwpunit": "4037",
+          "borderFillIDRef": "2",
+          "charPrIDRef": "16"
+        },
+        {
+          "row": 14,
+          "col": 3,
+          "rowSpan": 1,
+          "colSpan": 1,
+          "width_hwpunit": "3043",
+          "height_hwpunit": "4037",
+          "borderFillIDRef": "2",
+          "charPrIDRef": "11"
+        },
+        {
+          "row": 15,
+          "col": 0,
+          "rowSpan": 1,
+          "colSpan": 1,
+          "width_hwpunit": "3097",
+          "height_hwpunit": "6068",
+          "borderFillIDRef": "2",
+          "charPrIDRef": "15"
+        },
+        {
+          "row": 15,
+          "col": 1,
+          "rowSpan": 1,
+          "colSpan": 1,
+          "width_hwpunit": "28566",
+          "height_hwpunit": "6068",
+          "borderFillIDRef": "2",
+          "charPrIDRef": "12"
+        },
+        {
+          "row": 15,
+          "col": 2,
+          "rowSpan": 1,
+          "colSpan": 1,
+          "width_hwpunit": "18568",
+          "height_hwpunit": "6068",
+          "borderFillIDRef": "2",
+          "charPrIDRef": "16"
+        },
+        {
+          "row": 15,
+          "col": 3,
+          "rowSpan": 1,
+          "colSpan": 1,
+          "width_hwpunit": "3043",
+          "height_hwpunit": "6068",
+          "borderFillIDRef": "2",
+          "charPrIDRef": "11"
+        },
+        {
+          "row": 16,
+          "col": 0,
+          "rowSpan": 1,
+          "colSpan": 1,
+          "width_hwpunit": "3097",
+          "height_hwpunit": "4628",
+          "borderFillIDRef": "2",
+          "charPrIDRef": "15"
+        },
+        {
+          "row": 16,
+          "col": 1,
+          "rowSpan": 1,
+          "colSpan": 1,
+          "width_hwpunit": "28566",
+          "height_hwpunit": "4628",
+          "borderFillIDRef": "2",
+          "charPrIDRef": "12"
+        },
+        {
+          "row": 16,
+          "col": 2,
+          "rowSpan": 1,
+          "colSpan": 1,
+          "width_hwpunit": "18568",
+          "height_hwpunit": "4628",
+          "borderFillIDRef": "2",
+          "charPrIDRef": "16"
+        },
+        {
+          "row": 16,
+          "col": 3,
+          "rowSpan": 1,
+          "colSpan": 1,
+          "width_hwpunit": "3043",
+          "height_hwpunit": "4628",
+          "borderFillIDRef": "2",
+          "charPrIDRef": "11"
+        },
+        {
+          "row": 17,
+          "col": 0,
+          "rowSpan": 1,
+          "colSpan": 1,
+          "width_hwpunit": "3097",
+          "height_hwpunit": "4037",
+          "borderFillIDRef": "2",
+          "charPrIDRef": "15"
+        },
+        {
+          "row": 17,
+          "col": 1,
+          "rowSpan": 1,
+          "colSpan": 1,
+          "width_hwpunit": "28566",
+          "height_hwpunit": "4037",
+          "borderFillIDRef": "2",
+          "charPrIDRef": "12"
+        },
+        {
+          "row": 17,
+          "col": 2,
+          "rowSpan": 1,
+          "colSpan": 1,
+          "width_hwpunit": "18568",
+          "height_hwpunit": "4037",
+          "borderFillIDRef": "2",
+          "charPrIDRef": "16"
+        },
+        {
+          "row": 17,
+          "col": 3,
+          "rowSpan": 1,
+          "colSpan": 1,
+          "width_hwpunit": "3043",
+          "height_hwpunit": "4037",
+          "borderFillIDRef": "2",
+          "charPrIDRef": "11"
+        },
+        {
+          "row": 18,
+          "col": 0,
+          "rowSpan": 1,
+          "colSpan": 1,
+          "width_hwpunit": "3097",
+          "height_hwpunit": "4628",
+          "borderFillIDRef": "2",
+          "charPrIDRef": "15"
+        },
+        {
+          "row": 18,
+          "col": 1,
+          "rowSpan": 1,
+          "colSpan": 1,
+          "width_hwpunit": "28566",
+          "height_hwpunit": "4628",
+          "borderFillIDRef": "2",
+          "charPrIDRef": "12"
+        },
+        {
+          "row": 18,
+          "col": 2,
+          "rowSpan": 1,
+          "colSpan": 1,
+          "width_hwpunit": "18568",
+          "height_hwpunit": "4628",
+          "borderFillIDRef": "2",
+          "charPrIDRef": "16"
+        },
+        {
+          "row": 18,
+          "col": 3,
+          "rowSpan": 1,
+          "colSpan": 1,
+          "width_hwpunit": "3043",
+          "height_hwpunit": "4628",
+          "borderFillIDRef": "2",
+          "charPrIDRef": "11"
+        },
+        {
+          "row": 19,
+          "col": 0,
+          "rowSpan": 1,
+          "colSpan": 3,
+          "width_hwpunit": "50231",
+          "height_hwpunit": "3729",
+          "borderFillIDRef": "2",
+          "charPrIDRef": "12"
+        },
+        {
+          "row": 19,
+          "col": 3,
+          "rowSpan": 1,
+          "colSpan": 1,
+          "width_hwpunit": "3043",
+          "height_hwpunit": "3729",
+          "borderFillIDRef": "2",
+          "charPrIDRef": "11"
+        }
+      ],
+      "used_border_fills": {
+        "2": {
+          "leftBorder": {
+            "type": "SOLID",
+            "width": "0.12 mm",
+            "color": "#000000"
+          },
+          "rightBorder": {
+            "type": "SOLID",
+            "width": "0.12 mm",
+            "color": "#000000"
+          },
+          "topBorder": {
+            "type": "SOLID",
+            "width": "0.12 mm",
+            "color": "#000000"
+          },
+          "bottomBorder": {
+            "type": "SOLID",
+            "width": "0.12 mm",
+            "color": "#000000"
+          }
+        },
+        "15": {
+          "leftBorder": {
+            "type": "SOLID",
+            "width": "0.12 mm",
+            "color": "#000000"
+          },
+          "rightBorder": {
+            "type": "SOLID",
+            "width": "0.12 mm",
+            "color": "#000000"
+          },
+          "topBorder": {
+            "type": "SOLID",
+            "width": "0.12 mm",
+            "color": "#000000"
+          },
+          "bottomBorder": {
+            "type": "SOLID",
+            "width": "0.12 mm",
+            "color": "#000000"
+          },
+          "fill": {
+            "faceColor": "#D9D9D9"
+          }
+        }
+      },
+      "anchor_text": "문항",
+      "anchor_row": "문항|정답|인정정답및채점기준|배점",
+      "width_hwpunit": "53274",
+      "col_widths_hwpunit": [
+        "3097",
+        "28566",
+        "18568",
+        "3043"
+      ],
+      "used_char_prs": {
+        "11": {
+          "height_hwpunit": "900",
+          "textColor": "#000000",
+          "underline": true,
+          "fontRef_hangul": "0",
+          "fontName_hangul": "굴림"
+        },
+        "12": {
+          "height_hwpunit": "900",
+          "textColor": "#000000",
+          "underline": true,
+          "fontRef_hangul": "0",
+          "fontName_hangul": "굴림"
+        },
+        "14": {
+          "height_hwpunit": "900",
+          "textColor": "#000000",
+          "underline": true,
+          "fontRef_hangul": "0",
+          "fontName_hangul": "굴림"
+        },
+        "15": {
+          "height_hwpunit": "1000",
+          "textColor": "#000000",
+          "underline": true,
+          "fontRef_hangul": "0",
+          "fontName_hangul": "굴림"
+        },
+        "16": {
+          "height_hwpunit": "900",
+          "textColor": "#000000",
+          "underline": true,
+          "fontRef_hangul": "0",
+          "fontName_hangul": "굴림"
+        }
+      }
+    }
+  ]
+}

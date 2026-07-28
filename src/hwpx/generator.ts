@@ -17,7 +17,8 @@
  */
 
 import JSZip from "jszip"
-import { type GongmunOptions, needsGaejosikAssets, resolveGongmun, usesReportFonts } from "./gongmun.js"
+import { type GongmunOptions, needsGaejosikAssets, normalizeGongmunPreset, resolveGongmun, usesReportFonts } from "./gongmun.js"
+import { isAssessmentPreset, markdownToAssessmentHwpx } from "./assessment.js"
 import { type HwpxTheme, resolveTheme, charVariantBase } from "./gen-ids.js"
 import { buildPrvText, parseMarkdownToBlocks } from "./md-runs.js"
 import { generateContainerXml, generateManifest, generateHeaderXml, staticBorderFillNext, staticFontNext } from "./gen-header.js"
@@ -60,6 +61,12 @@ export async function markdownToHwpx(
   markdown: string,
   options?: MarkdownToHwpxOptions,
 ): Promise<ArrayBuffer> {
+  const requestedPreset = options?.gongmun?.preset
+    ? normalizeGongmunPreset(options.gongmun.preset)
+    : undefined
+  if (isAssessmentPreset(requestedPreset)) {
+    return markdownToAssessmentHwpx(markdown, requestedPreset)
+  }
   const theme = resolveTheme(options?.theme)
   const gongmun = options?.gongmun ? resolveGongmun(options.gongmun) : null
   // 실측 폰트 프리셋(개조식·보고서·계획서) — 전용 charPr 블록(11~25)이 먼저 온다 (QA-1)
