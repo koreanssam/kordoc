@@ -98,6 +98,33 @@ describe("학교 평가 내장 프리셋", () => {
     }
   })
 
+  it("서술형문항채점기준표: Kordoc이 HWP에서 추출한 HTML 표를 그대로 왕복", async () => {
+    const extracted = `(국어)과 2026학년도 ( 1 )학기 ( 1 )차 시험 (2)학년
+
+정기시험 서술형 문항 채점 기준표
+
+<table>
+<tr><td>반영점수 : 8점</td></tr>
+<tr><td>출 제 자 : 이 성 원 (인)</td></tr>
+</table>
+
+<table>
+<tr><th>문항</th><th>정답</th><th>인정정답 및 채점기준</th><th>배점</th></tr>
+<tr><td>1-1</td><td>첫째 답<br>둘째 답</td><td>의미가 일치하면 3점.</td><td>3</td></tr>
+<tr><td>1-2</td><td>정답</td><td>정확하면 5점.</td><td>5</td></tr>
+<tr><td colspan="3">합 계</td><td>8</td></tr>
+</table>`
+    const buffer = await markdownToHwpx(extracted, { gongmun: { preset: "rubric" } })
+    const zip = await JSZip.loadAsync(buffer)
+    const section = await zip.file("Contents/section0.xml")!.async("string")
+    assert.match(section, /\(국어\)과 2026학년도 \( 1 \)학기 \( 1 \)차 시험 \(2\)학년/)
+    assert.match(section, /반영점수 : 8점/)
+    assert.match(section, /이 성 원 \(인\)/)
+    assert.match(section, /rowCnt="4"/)
+    assert.match(section, /첫째 답/)
+    assert.match(section, /둘째 답/)
+  })
+
   it("영문 별칭 exam/rubric도 동일한 전용 생성기로 분기", async () => {
     const exam = await markdownToHwpx(EXAM_MD, { gongmun: { preset: "exam" } })
     const rubric = await markdownToHwpx(RUBRIC_MD, { gongmun: { preset: "rubric" } })

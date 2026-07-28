@@ -423,6 +423,51 @@ function parseMarkdownTable(body: string): string[][] {
   return rows
 }
 
+function decodeHtmlText(value: string): string {
+  return value
+    .replace(/<br\s*\/?>/gi, "\n")
+    .replace(/<[^>]+>/g, "")
+    .replace(/&nbsp;/gi, " ")
+    .replace(/&lt;/gi, "<")
+    .replace(/&gt;/gi, ">")
+    .replace(/&quot;/gi, "\"")
+    .replace(/&#39;|&apos;/gi, "'")
+    .replace(/&amp;/gi, "&")
+    .trim()
+}
+
+function parseHtmlRubricTable(body: string): string[][] {
+  const tables = body.match(/<table\b[\s\S]*?<\/table>/gi) ?? []
+  const rubric = tables.find((table) => /<t[hd]\b[^>]*>\s*문항\s*<\/t[hd]>/i.test(table))
+  if (!rubric) return []
+
+  const rows: string[][] = []
+  for (const rowMatch of rubric.matchAll(/<tr\b[^>]*>([\s\S]*?)<\/tr>/gi)) {
+    const cells = [...rowMatch[1].matchAll(/<t[hd]\b[^>]*>([\s\S]*?)<\/t[hd]>/gi)]
+      .map((cell) => decodeHtmlText(cell[1]))
+    if (cells.length > 0) rows.push(cells)
+  }
+  return rows
+}
+
+function enrichRubricMeta(meta: FrontMatter, body: string): FrontMatter {
+  const out = { ...meta }
+  const plain = decodeHtmlText(body)
+  const title = plain.match(/\(([^)]+)\)과\s*(\d{4})학년도\s*\(\s*(\d+)\s*\)학기\s*\(\s*(\d+)\s*\)차\s*시험\s*\((\d+)\)학년/)
+  if (title) {
+    out["과목"] ??= title[1]
+    out["학년도"] ??= title[2]
+    out["학기"] ??= title[3]
+    out["차수"] ??= title[4]
+    out["학년"] ??= title[5]
+  }
+  const score = plain.match(/반영점수\s*:\s*(\d+(?:\.\d+)?)점/)
+  if (score) out["반영점수"] ??= score[1]
+  const authors = plain.match(/출\s*제\s*자\s*:\s*([^\n]+)/)
+  if (authors) out["출제자"] ??= authors[1].trim()
+  return out
+}
+
 function setCellText(cell: XmlElement, text: string): void {
   const subList = firstElement(cell, "subList")
   if (!subList) return
@@ -463,8 +508,11 @@ function updateRubricMetadata(root: XmlElement, meta: FrontMatter): void {
 }
 
 async function buildRubric(markdown: string): Promise<ArrayBuffer> {
-  const { meta, body } = parseFrontMatter(markdown)
-  const parsedRows = parseMarkdownTable(body)
+  const parsed = parseFrontMatter(markdown)
+  const body = parsed.body
+  const meta = enrichRubricMeta(parsed.meta, body)
+  const markdownRows = parseMarkdownTable(body)
+  const parsedRows = markdownRows.length > 0 ? markdownRows : parseHtmlRubricTable(body)
   const dataRows = parsedRows.length > 0 && /문항/.test(parsedRows[0][0] ?? "") ? parsedRows.slice(1) : parsedRows
   const totalInput = dataRows.find((row) => /합\s*계/.test(row[0] ?? ""))
   const rows = dataRows.filter((row) => !/합\s*계/.test(row[0] ?? "")).map((row) => [...row, "", "", ""].slice(0, 4))
