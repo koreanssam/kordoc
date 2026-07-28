@@ -643,6 +643,8 @@ CLI로도: `kordoc generate 보고서.md -o 보고서.hwpx --preset 개조식 --
 
 고사원안은 YAML frontmatter 뒤에 `##` 본문 묶음, `#` 서술형 문항,
 `:::보기` 상자를 작성합니다.
+자세한 규칙과 예시는 [고사원안 템플릿 Markdown 작성법](docs/고사원안_템플릿_마크다운_작성법.md)을
+참고하세요.
 
 ```markdown
 ---
