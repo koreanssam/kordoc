@@ -1,5 +1,10 @@
 node_modules/
 dist/
+.env
+.env.*
+!.env.example
+secrets.env
+**/.kordoc/
 *.tsbuildinfo
 .DS_Store
 demo/node_modules/

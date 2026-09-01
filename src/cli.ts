@@ -3,7 +3,7 @@
 import { readFileSync, writeFileSync, mkdirSync, statSync } from "fs"
 import { basename, dirname, resolve, extname } from "path"
 import { Command } from "commander"
-import { parse, detectFormat, detectZipFormat, fillFormFields, extractFormFields, blocksToMarkdown, markdownToHwpx, fillHwpx } from "./index.js"
+import { parse, detectFormat, detectZipFormat, fillFormFields, extractFormFields, blocksToMarkdown, markdownToHwpx, fillHwpx, createUpstageOcrProvider } from "./index.js"
 import type { ParseOptions } from "./types.js"
 import { VERSION, toArrayBuffer, sanitizeError } from "./utils.js"
 
@@ -52,6 +52,11 @@ program
         if (opts.pages) parseOptions.pages = opts.pages as string
         if (opts.headerFooter === false) parseOptions.removeHeaderFooter = false
         if (opts.formulaOcr) parseOptions.formulaOcr = true
+        // 외부 OCR: UPSTAGE_API_KEY 가 있으면 Document Parse 를 ocr 훅에 연결.
+        // 키는 환경변수/로컬 secrets 만 — 깃에 넣지 말 것.
+        if (process.env.UPSTAGE_API_KEY && !parseOptions.ocr) {
+          parseOptions.ocr = createUpstageOcrProvider()
+        }
         if (!opts.silent) {
           parseOptions.onProgress = (current: number, total: number) => {
             process.stderr.write(`\r[kordoc] ${filePrefix}${fileName} (${format}) [${current}/${total}]`)

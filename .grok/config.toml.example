@@ -1,0 +1,11 @@
+# Copy values into ~/.grok/config.toml. Do not put the real API key here.
+# Grok expands ${UPSTAGE_API_KEY} from the user environment.
+
+[mcp_servers.kordoc]
+command = "cmd"
+args = ["/c", "npx", "-y", "kordoc", "mcp"]
+enabled = true
+startup_timeout_sec = 90
+
+[mcp_servers.kordoc.env]
+UPSTAGE_API_KEY = "${UPSTAGE_API_KEY}"

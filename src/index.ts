@@ -350,3 +350,5 @@ export type {
 } from "./types.js"
 export { blocksToMarkdown } from "./table/builder.js"
 export { VERSION } from "./utils.js"
+export { createUpstageOcrProvider, parseFileWithUpstage } from "./ocr/upstage.js"
+export type { UpstageParseOptions } from "./ocr/upstage.js"

@@ -410,7 +410,14 @@ const result = await parse(buffer, {
     return await myOcrService.recognize(pageImage)
   }
 })
+
+// Upstage Document Parse — API 키는 UPSTAGE_API_KEY 환경변수만 (깃에 넣지 말 것)
+import { createUpstageOcrProvider, parseFileWithUpstage } from "kordoc"
+const scanned = await parse(buffer, { ocr: createUpstageOcrProvider() })
+const fromImage = await parseFileWithUpstage("안내.png")
 ```
+
+Grok MCP·키 배치: [docs/upstage-ocr.md](docs/upstage-ocr.md)
 
 ### PDF 텍스트 품질 신호 (v2.9.0+)
 
